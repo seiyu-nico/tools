@@ -54795,11 +54795,13 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _util__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../util */ "./resources/js/util.js");
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
 
 var state = {
   strings: [],
@@ -54824,8 +54826,6 @@ var mutations = {
     state.strings[key][key_name] = value;
   },
   add: function add(state) {
-    // state.strings.push(state.base);
-    // state.strings.push({encode: '', decode:''});
     state.strings.push(JSON.parse(JSON.stringify(state.base)));
   }
 };
@@ -54844,9 +54844,19 @@ var actions = {
 
             case 2:
               response = _context.sent;
+
+              if (!(_util__WEBPACK_IMPORTED_MODULE_1__["INTERNAL_SERVER_ERROR"] === response.status)) {
+                _context.next = 6;
+                break;
+              }
+
+              alert('エラーが発生しました');
+              return _context.abrupt("return", false);
+
+            case 6:
               context.commit('setStrings', response.data);
 
-            case 4:
+            case 7:
             case "end":
               return _context.stop();
           }
@@ -54868,9 +54878,19 @@ var actions = {
 
             case 2:
               response = _context2.sent;
+
+              if (!(_util__WEBPACK_IMPORTED_MODULE_1__["INTERNAL_SERVER_ERROR"] === response.status)) {
+                _context2.next = 6;
+                break;
+              }
+
+              alert('エラーが発生しました');
+              return _context2.abrupt("return", false);
+
+            case 6:
               context.commit('setStrings', response.data);
 
-            case 4:
+            case 7:
             case "end":
               return _context2.stop();
           }
@@ -54937,11 +54957,14 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
 /*!******************************!*\
   !*** ./resources/js/util.js ***!
   \******************************/
-/*! exports provided: getCookieValue */
+/*! exports provided: OK, CREATED, INTERNAL_SERVER_ERROR, getCookieValue */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "OK", function() { return OK; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CREATED", function() { return CREATED; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "INTERNAL_SERVER_ERROR", function() { return INTERNAL_SERVER_ERROR; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getCookieValue", function() { return getCookieValue; });
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
 
@@ -54951,11 +54974,15 @@ function _iterableToArrayLimit(arr, i) { if (!(Symbol.iterator in Object(arr) ||
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
+var OK = 200;
+var CREATED = 201;
+var INTERNAL_SERVER_ERROR = 500;
 /**
  * クッキーの値を取得する
  * @param {String} searchKey 検索するキー
  * @returns {String} キーに対応する値
  */
+
 function getCookieValue(searchKey) {
   if (typeof searchKey === 'undefined') {
     return '';
