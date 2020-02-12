@@ -101,16 +101,54 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      strings: [{
+      strings: [],
+      base: {
         encode: '',
         decode: ''
-      }]
+      }
     };
   },
-  methods: {}
+  methods: {
+    encode: function encode() {
+      alert('encode');
+    },
+    decode: function decode() {
+      alert('decode');
+    },
+    add: function add() {
+      this.strings.push(this.base);
+    }
+  },
+  created: function created() {
+    this.add();
+  }
 });
 
 /***/ }),
@@ -624,24 +662,100 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", [
-      _c("h1", [_vm._v("base64")]),
+  return _c("div", [
+    _c("h1", [_vm._v("base64")]),
+    _vm._v(" "),
+    _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-5" }, [
+        _c("div", { staticClass: "form-group" }, [
+          _c("label", { attrs: { for: "exampleFormControlTextarea1" } }, [
+            _vm._v("base64_encode済みテキスト")
+          ]),
+          _vm._v(" "),
+          _c(
+            "div",
+            _vm._l(_vm.strings, function(string, index) {
+              return _c("input", {
+                key: "encode-" + index,
+                staticClass: "form-control my-1",
+                attrs: { type: "text" }
+              })
+            }),
+            0
+          )
+        ])
+      ]),
       _vm._v(" "),
+      _c("div", { staticClass: "col-2 mt-5" }, [
+        _c("div", { staticClass: "my-1" }, [
+          _c(
+            "button",
+            {
+              staticClass: "btn btn-primary btn-block",
+              on: {
+                click: function($event) {
+                  return _vm.encode()
+                }
+              }
+            },
+            [_vm._v("エンコード ->")]
+          )
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "my-1" }, [
+          _c(
+            "button",
+            {
+              staticClass: "btn btn-primary btn-block",
+              on: {
+                click: function($event) {
+                  return _vm.decode()
+                }
+              }
+            },
+            [_vm._v("<- デコード")]
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-5" }, [
+        _c("div", { staticClass: "form-group" }, [
+          _c("label", { attrs: { for: "exampleFormControlTextarea1" } }, [
+            _vm._v("base64_decode済みテキスト")
+          ]),
+          _vm._v(" "),
+          _c(
+            "div",
+            _vm._l(_vm.strings, function(string, index) {
+              return _c("input", {
+                key: "decode-" + index,
+                staticClass: "form-control my-1",
+                attrs: { type: "text" }
+              })
+            }),
+            0
+          )
+        ])
+      ])
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "row" }, [
       _c(
         "button",
-        { staticClass: "btn btn-primary", attrs: { type: "button" } },
-        [_vm._v("Primary")]
+        {
+          staticClass: "btn btn-secondary",
+          on: {
+            click: function($event) {
+              return _vm.add()
+            }
+          }
+        },
+        [_vm._v("追加")]
       )
     ])
-  }
-]
+  ])
+}
+var staticRenderFns = []
 render._withStripped = true
 
 
