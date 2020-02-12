@@ -16,3 +16,6 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::post('/base64-encode', 'Api\Base64Controller@encode');
+Route::post('/base64-decode', 'Api\Base64Controller@decode');
