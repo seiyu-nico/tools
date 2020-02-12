@@ -1965,6 +1965,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -38213,11 +38215,11 @@ var render = function() {
               staticClass: "btn btn-primary btn-block",
               on: {
                 click: function($event) {
-                  return _vm.encode()
+                  return _vm.decode()
                 }
               }
             },
-            [_vm._v("エンコード ->")]
+            [_vm._v("デコード ->")]
           )
         ]),
         _vm._v(" "),
@@ -38228,11 +38230,11 @@ var render = function() {
               staticClass: "btn btn-primary btn-block",
               on: {
                 click: function($event) {
-                  return _vm.decode()
+                  return _vm.encode()
                 }
               }
             },
-            [_vm._v("<- デコード")]
+            [_vm._v("<エンコード")]
           )
         ]),
         _vm._v(" "),
@@ -38264,7 +38266,8 @@ var render = function() {
               return _c("input", {
                 key: "decode-" + index,
                 staticClass: "form-control my-1",
-                attrs: { type: "text" }
+                attrs: { type: "text" },
+                domProps: { value: string.decode }
               })
             }),
             0
@@ -54781,7 +54784,7 @@ var state = {
   strings: [],
   base: {
     encode: '',
-    decode: ''
+    decode: 'あいうえお'
   }
 };
 var getters = {

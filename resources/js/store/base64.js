@@ -2,7 +2,7 @@ const state = {
   strings: [],
   base: {
     encode: '',
-    decode: ''
+    decode: 'あいうえお'
   }
 }
 
