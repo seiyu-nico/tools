@@ -8,13 +8,15 @@
           <div>
             <input class="form-control my-1" 
                     type="text" v-for="(string, index) in strings" 
-                    :key="`encode-${index}`" :value="string.encode"/>
+                    :key="`encode-${index}`" 
+                    :value="string.encode"
+                    @input="updateStringsForm($event, index, 'encode')"/>
           </div>
         </div>
       </div>
       <div class="col-2 mt-5">
         <div class="my-1"><button class="btn btn-primary btn-block" @click="decode()">デコード -&gt;</button></div>
-        <div class="my-1"><button class="btn btn-primary btn-block" @click="encode()">&lt;エンコード</button></div>
+        <div class="my-1"><button class="btn btn-primary btn-block" @click="encode()">&lt;- エンコード</button></div>
         <div class="my-1"><button class="btn btn-secondary" @click="add()">追加</button></div>
       </div>
       <div class="col-5">
@@ -23,7 +25,9 @@
           <div>
             <input class="form-control my-1" 
                     type="text" v-for="(string, index) in strings" 
-                    :key="`decode-${index}`" :value="string.decode"/>
+                    :key="`decode-${index}`" 
+                    :value="string.decode"
+                    @input="updateStringsForm($event, index, 'decode')"/>
           </div>
         </div>
       </div>
@@ -38,6 +42,9 @@ export default {
     }
   },
   methods: {
+    updateStringsForm(e, key, key_name) {
+      this.$store.commit('base64/updateStringsFormValue', { value:e.target.value, key:key, key_name });
+    },
     async encode() {
       await this.$store.dispatch('base64/encode', this.$store.getters['base64/strings']);
     },

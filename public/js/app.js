@@ -1967,12 +1967,23 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {};
   },
   methods: {
+    updateStringsForm: function updateStringsForm(e, key, key_name) {
+      this.$store.commit('base64/updateStringsFormValue', {
+        value: e.target.value,
+        key: key,
+        key_name: key_name
+      });
+    },
     encode: function encode() {
       var _this = this;
 
@@ -38199,7 +38210,12 @@ var render = function() {
                 key: "encode-" + index,
                 staticClass: "form-control my-1",
                 attrs: { type: "text" },
-                domProps: { value: string.encode }
+                domProps: { value: string.encode },
+                on: {
+                  input: function($event) {
+                    return _vm.updateStringsForm($event, index, "encode")
+                  }
+                }
               })
             }),
             0
@@ -38234,7 +38250,7 @@ var render = function() {
                 }
               }
             },
-            [_vm._v("<エンコード")]
+            [_vm._v("<- エンコード")]
           )
         ]),
         _vm._v(" "),
@@ -38267,7 +38283,12 @@ var render = function() {
                 key: "decode-" + index,
                 staticClass: "form-control my-1",
                 attrs: { type: "text" },
-                domProps: { value: string.decode }
+                domProps: { value: string.decode },
+                on: {
+                  input: function($event) {
+                    return _vm.updateStringsForm($event, index, "decode")
+                  }
+                }
               })
             }),
             0
@@ -54784,7 +54805,7 @@ var state = {
   strings: [],
   base: {
     encode: '',
-    decode: 'あいうえお'
+    decode: ''
   }
 };
 var getters = {
@@ -54794,11 +54815,18 @@ var getters = {
 };
 var mutations = {
   setStrings: function setStrings(state, strings) {
-    console.log(strings);
     state.strings = strings;
   },
+  updateStringsFormValue: function updateStringsFormValue(state, _ref) {
+    var value = _ref.value,
+        key = _ref.key,
+        key_name = _ref.key_name;
+    state.strings[key][key_name] = value;
+  },
   add: function add(state) {
-    state.strings.push(state.base);
+    // state.strings.push(state.base);
+    // state.strings.push({encode: '', decode:''});
+    state.strings.push(JSON.parse(JSON.stringify(state.base)));
   }
 };
 var actions = {
@@ -54811,15 +54839,14 @@ var actions = {
         while (1) {
           switch (_context.prev = _context.next) {
             case 0:
-              console.log(data);
-              _context.next = 3;
+              _context.next = 2;
               return axios.post('/api/base64-encode', data);
 
-            case 3:
+            case 2:
               response = _context.sent;
               context.commit('setStrings', response.data);
 
-            case 5:
+            case 4:
             case "end":
               return _context.stop();
           }
