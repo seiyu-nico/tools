@@ -3,7 +3,7 @@ import Vuex from 'vuex';
 
 import base64 from './base64';
 
-Vue.use(Vuex)
+Vue.use(Vuex);
 
 const store = new Vuex.Store({
   modules: {

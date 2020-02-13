@@ -37,10 +37,6 @@
 <script>
 import { mapState } from 'vuex';
 export default {
-  data () {
-    return {
-    }
-  },
   methods: {
     updateStringsForm(e, key, key_name) {
       this.$store.commit('base64/updateStringsFormValue', { value:e.target.value, key:key, key_name });
