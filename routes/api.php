@@ -19,3 +19,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::post('/base64-encode', 'Api\Base64Controller@encode');
 Route::post('/base64-decode', 'Api\Base64Controller@decode');
+
+Route::post('/url-encode', 'Api\UrlEncodeController@encode');
+Route::post('/url-decode', 'Api\UrlEncodeController@decode');
