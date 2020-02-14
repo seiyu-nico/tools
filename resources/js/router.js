@@ -5,6 +5,7 @@ import VueRouter from 'vue-router';
 import Index from './pages/Index.vue';
 import Base64 from './pages/Base64.vue';
 import UrlEncode from './pages/UrlEncode.vue';
+import StrCount from './pages/StrCount.vue';
 
 // VueRouterプラグインを使用する
 // これによって<RouterView />コンポーネントなどを使うことができる
@@ -26,6 +27,11 @@ const routes = [
     path: '/url-encode',
     name: 'url-encode',
     component: UrlEncode,
+  },
+  {
+    path: '/str-count',
+    name: 'str-count',
+    component: StrCount,
   }
 ]
 
