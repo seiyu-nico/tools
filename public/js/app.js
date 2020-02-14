@@ -2092,7 +2092,11 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     }
   },
   created: function created() {
-    this.add();
+    // 最初だけ追加
+    // destoryedなどで消してもいいが、ページをリロードするまで残るようにした
+    if (0 == this.strings.length) {
+      this.add();
+    }
   },
   computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapState"])({
     strings: function strings(state) {
@@ -2238,7 +2242,11 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     }
   },
   created: function created() {
-    this.add();
+    // 最初だけ追加
+    // destoryedなどで消してもいいが、ページをリロードするまで残るようにした
+    if (0 == this.strings.length) {
+      this.add();
+    }
   },
   computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapState"])({
     strings: function strings(state) {

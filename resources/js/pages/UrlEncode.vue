@@ -52,7 +52,11 @@ export default {
     },
   },
   created() {
-    this.add();
+    // 最初だけ追加
+    // destoryedなどで消してもいいが、ページをリロードするまで残るようにした
+    if (0 == this.strings.length) {
+      this.add();
+    }
   },
   computed: {
     ...mapState({
