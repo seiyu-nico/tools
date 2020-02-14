@@ -14,14 +14,17 @@ Vue.use(VueRouter);
 const routes = [
   {
     path: '/',
+    name: 'index',
     component: Index,
   },
   {
     path: '/base64',
+    name: 'base64',
     component: Base64,
   },
   {
     path: '/url-encode',
+    name: 'url-encode',
     component: UrlEncode,
   }
 ]
@@ -31,6 +34,7 @@ const router = new VueRouter({
   mode: 'history', 
   routes
 })
+
 
 // VueRouterインスタンスをエクスポートする
 // app.jsでインポートするため

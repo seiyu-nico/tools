@@ -1,0 +1,9 @@
+<template>
+  <div>
+    <router-link :to="{ name: 'index'}">TOP</router-link><br>
+    <router-link :to="{ name: 'base64'}">base64エンコード/デコード</router-link><br>
+    <router-link :to="{ name: 'url-encode'}">urlエンコード/デコード</router-link><br>
+  </div>
+</template>
+<script>
+</script>
