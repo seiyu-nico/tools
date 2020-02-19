@@ -9,10 +9,10 @@ export const INTERNAL_SERVER_ERROR = 500
  */
 export function getCookieValue (searchKey) {
   if (typeof searchKey === 'undefined') {
-    return ''
+    return '';
   }
 
-  let val = ''
+  let val = '';
 
   document.cookie.split(';').forEach(cookie => {
     const [key, value] = cookie.split('=')
@@ -21,7 +21,7 @@ export function getCookieValue (searchKey) {
     }
   })
 
-  return val
+  return val;
 }
 
 

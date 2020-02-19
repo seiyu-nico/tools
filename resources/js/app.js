@@ -7,6 +7,8 @@ import App from './App.vue';
 import store from './store';
 // Analytics用に読み込み
 import './analytics';
+// Vue-Head読み込み
+import './header';
 
 new Vue({
   el: '#app',

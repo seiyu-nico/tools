@@ -26,6 +26,7 @@
     },
     "dependencies": {
         "vue-analytics": "^5.22.1",
+        "vue-head": "^2.2.0",
         "vuex": "^3.1.2"
     }
 }
