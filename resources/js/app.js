@@ -6,8 +6,7 @@ import router from './router';
 import App from './App.vue';
 import store from './store';
 // Analytics用に読み込み
-import './analytics';
-
+// import './analytics';
 
 new Vue({
   el: '#app',
