@@ -5,7 +5,7 @@
       <div class="col-4">
         <div class="form-group">
           <label for="exampleFormControlTextarea1">作成したい文字数</label>
-          <input class="form-control"  type="number" v-model="length">
+          <input class="form-control"  type="number" :value="length" @input="updateLength($event)">
         </div>
       </div>
       <div class="col-2">
@@ -40,56 +40,24 @@
   </div>
 </template>
 <script>
+import { mapState } from 'vuex';
 export default { 
-  data() {
-    return {
-      string: '',
-      length: 1,
-      list: [
-        { 
-          word: 'abcdefghijklmnopqrstuvwxyz',
-          name: '小文字アルファベット',
-          checked: false,
-        },
-        { 
-          word: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
-          name: '大文字アルファベット',       
-          checked: false,
-        },
-        { 
-          word: '0123456789',
-          name: '数字',
-          checked: false,
-        },
-        { 
-          word: 'あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをん',
-          name: 'かな',
-          checked: false,
-        },
-      ],
-      words: '',
-    }
-  },
   methods: {
     create() {
-      this.string = '';
-      this.createIncludesWord();
-      if ('' != this.words ) {
-        for (let i = 0; i < this.length; i++) {
-          this.string += this.words[Math.floor(Math.random() * this.words.length)];
-        }
-      } else {
-        alert('含める文字を選択してください');
-      }
+      this.$store.commit('samplestring/create');
     },
-    createIncludesWord() {
-      this.words = '';
-      this.list.map((value) => {
-        if (true == value.checked) {
-          this.words += value.word;
-        }
-      })
+    updateLength(e) {
+        this.$store.commit('samplestring/updateLength', e.target.value); 
     },
+    
+  },
+  computed: {
+    ...mapState({
+      string: state => state.samplestring.string,
+      length: state => state.samplestring.length,
+      list: state => state.samplestring.list,
+      words: state => state.samplestring.words,
+    })
   }
 }
 </script>
