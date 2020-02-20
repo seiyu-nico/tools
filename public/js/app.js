@@ -1935,6 +1935,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
     Header: _components_Header_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
+  head: {
+    meta: function meta() {
+      return [{
+        name: 'viewport',
+        content: 'width=device-width, initial-scale=1, shrink-to-fit=no'
+      }, {
+        charset: 'utf-8'
+      }];
+    }
   }
 });
 
@@ -2103,7 +2113,14 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     strings: function strings(state) {
       return state.base64.strings;
     }
-  }))
+  })),
+  head: {
+    title: {
+      inner: "便利ツール",
+      separator: '|',
+      complement: 'Base64エンコード/デコード'
+    }
+  }
 });
 
 /***/ }),
@@ -2123,7 +2140,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   head: {
     title: {
-      inner: 'tools',
+      inner: "便利ツール",
       separator: '|',
       complement: 'TOPページ'
     }
@@ -2174,6 +2191,13 @@ __webpack_require__.r(__webpack_exports__);
     "byte": function byte() {
       // バイト数で計算
       return encodeURI(this.string).replace(/%../g, "*").length;
+    }
+  },
+  head: {
+    title: {
+      inner: "便利ツール",
+      separator: '|',
+      complement: '文字数カウント'
     }
   }
 });
@@ -2325,7 +2349,14 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     strings: function strings(state) {
       return state.urlencode.strings;
     }
-  }))
+  })),
+  head: {
+    title: {
+      inner: "便利ツール",
+      separator: '|',
+      complement: 'Urlエンコード/デコード'
+    }
+  }
 });
 
 /***/ }),

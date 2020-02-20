@@ -62,6 +62,13 @@ export default {
     ...mapState({
       strings: state => state.base64.strings
     })
+  },
+  head: {
+    title: {
+      inner: process.env.MIX_APP_NAME,
+      separator: '|',
+      complement: 'Base64エンコード/デコード'
+    },
   }
 }
 </script>

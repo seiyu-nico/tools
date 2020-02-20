@@ -33,6 +33,13 @@ export default {
       // バイト数で計算
       return encodeURI(this.string).replace(/%../g, "*").length;
     }
+  },
+  head: {
+    title: {
+      inner: process.env.MIX_APP_NAME,
+      separator: '|',
+      complement: '文字数カウント'
+    },
   }
 }
 </script>

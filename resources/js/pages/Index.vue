@@ -5,7 +5,7 @@
 export default {
   head: {
     title: {
-      inner: 'tools',
+      inner: process.env.MIX_APP_NAME,
       separator: '|',
       complement: 'TOPページ'
     },
