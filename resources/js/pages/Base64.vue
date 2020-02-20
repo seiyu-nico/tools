@@ -2,7 +2,7 @@
   <div>
     <h1>base64</h1>
     <div class="row">
-      <div class="col-5">
+      <div class="col-md-5 col-sm-12 col-xs-12">
         <div class="form-group">
           <label for="exampleFormControlTextarea1">base64_encode済みテキスト</label>
           <div>
@@ -14,12 +14,12 @@
           </div>
         </div>
       </div>
-      <div class="col-2 mt-5">
+      <div class="col-md-2 col-sm-12 col-xs-12 mt-md-5">
         <div class="my-1"><button class="btn btn-primary btn-block" @click="decode()">デコード -&gt;</button></div>
         <div class="my-1"><button class="btn btn-primary btn-block" @click="encode()">&lt;- エンコード</button></div>
-        <div class="my-1"><button class="btn btn-secondary" @click="add()">追加</button></div>
+        <div class="my-1 d-none d-md-block"><button class="btn btn-secondary" @click="add()">追加</button></div>
       </div>
-      <div class="col-5">
+      <div class="col-md-5 col-sm-12 col-xs-12">
         <div class="form-group">
           <label for="exampleFormControlTextarea1">base64_decode済みテキスト</label>
           <div>
