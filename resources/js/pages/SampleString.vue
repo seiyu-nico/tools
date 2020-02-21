@@ -58,6 +58,13 @@ export default {
       list: state => state.samplestring.list,
       words: state => state.samplestring.words,
     })
+  },
+  head: {
+    title: {
+      inner: process.env.MIX_APP_NAME,
+      separator: '|',
+      complement: 'サンプル文字列'
+    },
   }
 }
 </script>

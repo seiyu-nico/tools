@@ -62,6 +62,13 @@ export default {
     ...mapState({
       strings: state => state.urlencode.strings
     })
+  },
+  head: {
+    title: {
+      inner: process.env.MIX_APP_NAME,
+      separator: '|',
+      complement: 'Urlエンコード/デコード'
+    },
   }
 }
 </script>
