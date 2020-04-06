@@ -1,11 +1,25 @@
 <template>
-  <div class="my-3">
-    <router-link :to="{ name: 'index'}">TOP</router-link><br>
-    <router-link :to="{ name: 'base64'}">base64エンコード/デコード</router-link><br>
-    <router-link :to="{ name: 'url-encode'}">urlエンコード/デコード</router-link><br>
-    <router-link :to="{ name: 'str-count'}">文字数カウント</router-link><br>
-    <router-link :to="{ name: 'sample-string'}">文字列生成</router-link><br>
-  </div>
+  <nav class="navbar navbar-expand navbar-dark bg-dark fixed-top" style="z-index:1;">
+    <div class="collapse navbar-collapse justify-content-start">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <router-link :to="{name: 'Index.Index'}" class="navbar-brand" style="margin-left: 50px;">便利ツール</router-link>
+        </li>
+      </ul>
+    </div>
+    <div class="collapse navbar-collapse justify-content-end">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <!-- <a class="nav-link">{{ nickname }}</a> -->
+        </li>
+        <li v-if="isLogin" class="nav-item active">
+          <!-- <a class="nav-link" @click="logout">ログアウト</a> -->
+        </li>
+      </ul>
+    </div>
+  </nav>
 </template>
 <script>
+export default {
+}
 </script>
