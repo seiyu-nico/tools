@@ -19,25 +19,25 @@
           </li>
           <li> 
             <router-link :to="{name: 'Base64.Index'}">
-              <i class="fa fa-book"></i>
+              <i class="material-icons">library_books</i>
               <span>base64 encode/decode</span>
             </router-link>
           </li>
           <li> 
             <router-link :to="{name: 'SampleString.Index'}">
-              <i class="fa fa-book"></i>
+              <i class="material-icons">library_books</i>
               <span>文字列生成</span>
             </router-link>
           </li>
           <li> 
             <router-link :to="{name: 'StrCount.Index'}">
-              <i class="fa fa-book"></i>
+              <i class="material-icons">library_books</i>
               <span>文字数カウント</span>
             </router-link>
           </li>
           <li> 
             <router-link :to="{name: 'UrlEncode.Index'}">
-              <i class="fa fa-book"></i>
+              <i class="material-icons">library_books</i>
               <span>urlencode/ urldecode</span>
             </router-link>
           </li>
