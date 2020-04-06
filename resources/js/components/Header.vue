@@ -12,7 +12,7 @@
         <li class="nav-item active">
           <!-- <a class="nav-link">{{ nickname }}</a> -->
         </li>
-        <li v-if="isLogin" class="nav-item active">
+        <li class="nav-item active">
           <!-- <a class="nav-link" @click="logout">ログアウト</a> -->
         </li>
       </ul>
