@@ -25,7 +25,9 @@ class Base64Controller extends Controller
         $strings = $request->all();
         foreach ($strings as $key => $val) {
             $res[$key]['encode'] = $val['encode'];
-            $res[$key]['decode'] = base64_decode($val['encode']);
+            $decode = base64_decode($val['encode']);
+            $m_code = mb_detect_encoding($decode);
+            $res[$key]['decode'] = mb_convert_encoding($decode, 'utf-8', $m_code);
         }
 
         return $res;
