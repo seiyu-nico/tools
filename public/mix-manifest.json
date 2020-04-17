@@ -1,4 +1,9 @@
 {
-    "/js/app.js": "/js/app.js?id=01295f01b83df0fcc6f5",
-    "/css/app.css": "/css/app.css?id=3d4f06a53acc7b228bcc"
+    "/js/app.js": "/js/app.js",
+    "/css/app.css": "/css/app.css",
+    "/js/base64/index.js": "/js/base64/index.js",
+    "/js/index/index.js": "/js/index/index.js",
+    "/js/sample-string/index.js": "/js/sample-string/index.js",
+    "/js/str-count/index.js": "/js/str-count/index.js",
+    "/js/url-encode/index.js": "/js/url-encode/index.js"
 }

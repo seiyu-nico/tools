@@ -1,12 +1,11 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 
-// ページコンポーネントをインポートする
-import Index from './pages/Index.vue';
-import Base64 from './pages/Base64.vue';
-import UrlEncode from './pages/UrlEncode.vue';
-import StrCount from './pages/StrCount.vue';
-import SampleString from './pages/SampleString.vue';
+import IndexRouter from './components/Index/router';
+import Base64Router from './components/Base64/router';
+import SampleStringRouter from './components/SampleString/router';
+import StrCountRouter from './components/StrCount/router';
+import UrlEncodeRouter from './components/UrlEncode/router';
 
 
 // VueRouterプラグインを使用する
@@ -15,31 +14,11 @@ Vue.use(VueRouter);
 
 // パスとコンポーネントのマッピング
 const routes = [
-  {
-    path: '/',
-    name: 'index',
-    component: Index,
-  },
-  {
-    path: '/base64',
-    name: 'base64',
-    component: Base64,
-  },
-  {
-    path: '/url-encode',
-    name: 'url-encode',
-    component: UrlEncode,
-  },
-  {
-    path: '/str-count',
-    name: 'str-count',
-    component: StrCount,
-  },
-  {
-    path: '/sample-string',
-    name: 'sample-string',
-    component: SampleString,
-  }
+  { ...IndexRouter, },
+  { ...Base64Router, },
+  { ...SampleStringRouter, },
+  { ...StrCountRouter, },
+  { ...UrlEncodeRouter, },
 ]
 
 // VueRouterインスタンスを作成する
@@ -47,7 +26,6 @@ const router = new VueRouter({
   mode: 'history', 
   routes
 })
-
 
 // VueRouterインスタンスをエクスポートする
 // app.jsでインポートするため
