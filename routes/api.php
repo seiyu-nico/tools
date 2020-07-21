@@ -22,3 +22,6 @@ Route::post('/base64-decode', 'Api\Base64Controller@decode');
 
 Route::post('/url-encode', 'Api\UrlEncodeController@encode');
 Route::post('/url-decode', 'Api\UrlEncodeController@decode');
+
+Route::post('/json-encode', 'Api\JsonController@encode');
+Route::post('/json-decode', 'Api\JsonController@decode');

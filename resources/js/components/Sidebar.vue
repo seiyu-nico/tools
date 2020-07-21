@@ -13,15 +13,27 @@
       </div>
       <!-- sidebar-header  -->
       <div class="sidebar-menu">
-        <ul>
+        <ul style="list-style:none;">
           <li class="header-menu">
             <span>General</span>
           </li>
-          <li> 
-            <router-link :to="{name: 'Base64.Index'}">
-              <i class="material-icons">library_books</i>
-              <span>base64 encode/decode</span>
-            </router-link>
+          <li class="sidebar-dropdown"> 
+            <a style="cursor: pointer;">
+              <i class="material-icons">work</i>
+              <span>BASE64</span>
+            </a>
+             <div class="sidebar-submenu">
+              <ul>
+                <li>
+                  <router-link :to="{name: 'Base64.Index'}">
+                    <span @click="closeSideber()">
+                      <i class="material-icons">library_books</i>
+                      <span>エンコード / デコード</span>
+                    </span>
+                  </router-link>
+                </li>
+              </ul>
+            </div>
           </li>
           <li> 
             <router-link :to="{name: 'SampleString.Index'}">
@@ -35,11 +47,43 @@
               <span>文字数カウント</span>
             </router-link>
           </li>
-          <li> 
-            <router-link :to="{name: 'UrlEncode.Index'}">
-              <i class="material-icons">library_books</i>
-              <span>urlencode/ urldecode</span>
-            </router-link>
+
+          <li class="sidebar-dropdown"> 
+            <a style="cursor: pointer;">
+              <i class="material-icons">work</i>
+              <span>URL</span>
+            </a>
+             <div class="sidebar-submenu">
+              <ul>
+                <li>
+                  <router-link :to="{name: 'UrlEncode.Index'}">
+                    <span @click="closeSideber()">
+                      <i class="material-icons">library_books</i>
+                      <span>エンコード / デコード</span>
+                    </span>
+                  </router-link>
+                </li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="sidebar-dropdown"> 
+            <a style="cursor: pointer;">
+              <i class="material-icons">work</i>
+              <span>JSON</span>
+            </a>
+             <div class="sidebar-submenu">
+              <ul>
+                <li>
+                  <router-link :to="{name: 'Json.Index'}">
+                    <span @click="closeSideber()">
+                      <i class="material-icons">work</i>
+                      <span>エンコード / デコード</span>
+                    </span>
+                  </router-link>
+                </li>
+              </ul>
+            </div>
           </li>
           <!-- <li class="header-menu">
             <span>General</span>
@@ -129,6 +173,20 @@ export default {
     $("#show-sidebar").click(function() {
       $(".page-wrapper").addClass("toggled");
     });
+    $(function() {
+      if (992 >= window.innerWidth) {
+        // 画面サイズがPC(992px)以上のときだけたたむ
+        $(".page-wrapper").removeClass("toggled");
+      }
+    });
+  },
+  methods: {
+    closeSideber () {
+      if (992 >= window.innerWidth) {
+        // 画面サイズがPC(992px)以上のときだけたたむ
+        $(".page-wrapper").removeClass("toggled");
+      }
+    },
   },
   computed: {
   }

@@ -6,6 +6,7 @@ import Base64Router from './components/Base64/router';
 import SampleStringRouter from './components/SampleString/router';
 import StrCountRouter from './components/StrCount/router';
 import UrlEncodeRouter from './components/UrlEncode/router';
+import JsonRouter from './components/Json/router';
 
 
 // VueRouterプラグインを使用する
@@ -19,6 +20,7 @@ const routes = [
   { ...SampleStringRouter, },
   { ...StrCountRouter, },
   { ...UrlEncodeRouter, },
+  { ...JsonRouter, },
 ]
 
 // VueRouterインスタンスを作成する

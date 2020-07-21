@@ -1,12 +1,13 @@
 import Router from './Router';
 
+
 export default {
-  path: '/',
+  path: '/json',
   component: Router,
   children: [
     {
       path: '',
-      name: 'Index.Index',
+      name: 'Json.Index',
       component: resolve => {
         require.ensure(['./Index.vue'], () => {
         resolve(require('./Index.vue'));
