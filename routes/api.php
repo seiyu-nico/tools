@@ -25,3 +25,6 @@ Route::post('/url-decode', 'Api\UrlEncodeController@decode');
 
 Route::post('/json-encode', 'Api\JsonController@encode');
 Route::post('/json-decode', 'Api\JsonController@decode');
+
+Route::post('/qr', 'Api\QrController@create');
+

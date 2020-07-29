@@ -5,6 +5,7 @@ import base64 from './base64';
 import urlencode from './urlencode';
 import samplestring from './SampleString';
 import json from './json';
+import qr from './qr';
 
 
 Vue.use(Vuex);
@@ -15,6 +16,7 @@ const store = new Vuex.Store({
     urlencode,
     samplestring,
     json,
+    qr,
   }
 })
 

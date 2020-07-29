@@ -85,6 +85,14 @@
               </ul>
             </div>
           </li>
+
+          <li> 
+            <router-link :to="{name: 'Qr.Index'}">
+              <i class="material-icons">library_books</i>
+              <span>QRコード</span>
+            </router-link>
+          </li>
+
           <!-- <li class="header-menu">
             <span>General</span>
           </li>
