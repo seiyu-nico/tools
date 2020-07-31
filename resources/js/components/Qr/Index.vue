@@ -5,8 +5,12 @@
       <div class="form-group col-8">
         <label for="QrFormControlTextarea2">テキスト</label>
         <div>
-          <textarea class="form-control" id="QrFormControlTextarea2" rows="3"
-            :value="params.text" @input="updateParams('text', $event)"></textarea>
+          <textarea id="QrFormControlTextarea2" rows="3"
+            :value="params.text" @input="updateParams('text', $event)" 
+            :class="[errors.text ? 'is-invalid' : '', 'form-control']"></textarea>
+          <template v-if="errors.text">
+            <div v-for="(error, index) in errors.text" :key=index class="invalid-feedback">{{error}}</div>
+          </template>  
         </div>
       </div>
     </div>
@@ -62,7 +66,8 @@ export default {
   computed: {
     ...mapState({
       params: state => state.qr.params,
-      base64_qr: state => state.qr.base64_qr
+      base64_qr: state => state.qr.base64_qr,
+      errors: state => state.qr.errors,
     })
   },
   head: {

@@ -1,4 +1,4 @@
-import {CREATED, INTERNAL_SERVER_ERROR } from '../util';
+import {CREATED, VALIDATE_ERROR, INTERNAL_SERVER_ERROR } from '../util';
 
 const state = {
   params: {
@@ -17,6 +17,7 @@ const state = {
     'L', 'Q', 'M', 'H'
   ],
   base64_qr: '',
+  errors: {},
 }
 
 const getters = {
@@ -29,6 +30,9 @@ const mutations = {
   setQr (state, data) {
     state.base64_qr = data;
   },
+  setErrors (state, data) {
+    state.errors = data;
+  }
 }
 
 const actions = {
@@ -44,12 +48,15 @@ const actions = {
       headers: {
           'content-type': 'multipart/form-data',
       }
-    };
+    }
+    // APIを投げる前にエラーを空にする
+    context.commit('setErrors', {});
     const response = await axios.post('/api/qr', params, config).catch(error => error.response || error);
-    console.log(response);
-    if (response.status === CREATED) {
+    if (CREATED === response.status) {
       context.commit('setQr', response.data.qr);
       return response;
+    } else if (VALIDATE_ERROR === response.status) {
+      context.commit('setErrors', response.data.errors);
     }
   },
 }

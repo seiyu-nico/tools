@@ -60,6 +60,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -130,6 +134,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     },
     base64_qr: function base64_qr(state) {
       return state.qr.base64_qr;
+    },
+    errors: function errors(state) {
+      return state.qr.errors;
     }
   })),
   head: {
@@ -216,18 +223,32 @@ var render = function() {
           _vm._v("テキスト")
         ]),
         _vm._v(" "),
-        _c("div", [
-          _c("textarea", {
-            staticClass: "form-control",
-            attrs: { id: "QrFormControlTextarea2", rows: "3" },
-            domProps: { value: _vm.params.text },
-            on: {
-              input: function($event) {
-                return _vm.updateParams("text", $event)
+        _c(
+          "div",
+          [
+            _c("textarea", {
+              class: [_vm.errors.text ? "is-invalid" : "", "form-control"],
+              attrs: { id: "QrFormControlTextarea2", rows: "3" },
+              domProps: { value: _vm.params.text },
+              on: {
+                input: function($event) {
+                  return _vm.updateParams("text", $event)
+                }
               }
-            }
-          })
-        ])
+            }),
+            _vm._v(" "),
+            _vm.errors.text
+              ? _vm._l(_vm.errors.text, function(error, index) {
+                  return _c(
+                    "div",
+                    { key: index, staticClass: "invalid-feedback" },
+                    [_vm._v(_vm._s(error))]
+                  )
+                })
+              : _vm._e()
+          ],
+          2
+        )
       ])
     ]),
     _vm._v(" "),

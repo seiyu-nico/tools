@@ -57506,7 +57506,8 @@ var state = {
     error_correction: 'H'
   },
   error_corrections: ['L', 'Q', 'M', 'H'],
-  base64_qr: ''
+  base64_qr: '',
+  errors: {}
 };
 var getters = {};
 var mutations = {
@@ -57515,6 +57516,9 @@ var mutations = {
   },
   setQr: function setQr(state, data) {
     state.base64_qr = data;
+  },
+  setErrors: function setErrors(state, data) {
+    state.errors = data;
   }
 };
 var actions = {
@@ -57557,25 +57561,31 @@ var actions = {
                 headers: {
                   'content-type': 'multipart/form-data'
                 }
-              };
-              _context2.next = 5;
+              }; // APIを投げる前にエラーを空にする
+
+              context.commit('setErrors', {});
+              _context2.next = 6;
               return axios.post('/api/qr', params, config)["catch"](function (error) {
                 return error.response || error;
               });
 
-            case 5:
+            case 6:
               response = _context2.sent;
-              console.log(response);
 
-              if (!(response.status === _util__WEBPACK_IMPORTED_MODULE_1__["CREATED"])) {
-                _context2.next = 10;
+              if (!(_util__WEBPACK_IMPORTED_MODULE_1__["CREATED"] === response.status)) {
+                _context2.next = 12;
                 break;
               }
 
               context.commit('setQr', response.data.qr);
               return _context2.abrupt("return", response);
 
-            case 10:
+            case 12:
+              if (_util__WEBPACK_IMPORTED_MODULE_1__["VALIDATE_ERROR"] === response.status) {
+                context.commit('setErrors', response.data.errors);
+              }
+
+            case 13:
             case "end":
               return _context2.stop();
           }
@@ -57741,13 +57751,14 @@ var actions = {
 /*!******************************!*\
   !*** ./resources/js/util.js ***!
   \******************************/
-/*! exports provided: OK, CREATED, INTERNAL_SERVER_ERROR, getCookieValue */
+/*! exports provided: OK, CREATED, VALIDATE_ERROR, INTERNAL_SERVER_ERROR, getCookieValue */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "OK", function() { return OK; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CREATED", function() { return CREATED; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "VALIDATE_ERROR", function() { return VALIDATE_ERROR; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "INTERNAL_SERVER_ERROR", function() { return INTERNAL_SERVER_ERROR; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getCookieValue", function() { return getCookieValue; });
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
@@ -57760,6 +57771,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 var OK = 200;
 var CREATED = 201;
+var VALIDATE_ERROR = 422;
 var INTERNAL_SERVER_ERROR = 500;
 /**
  * クッキーの値を取得する
