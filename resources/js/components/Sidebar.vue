@@ -19,7 +19,7 @@
           </li>
           <li class="sidebar-dropdown"> 
             <a style="cursor: pointer;">
-              <i class="material-icons">work</i>
+              <i class="fa fa-book "></i>
               <span>BASE64</span>
             </a>
              <div class="sidebar-submenu">
@@ -27,7 +27,7 @@
                 <li>
                   <router-link :to="{name: 'Base64.Index'}">
                     <span @click="closeSideber()">
-                      <i class="material-icons">library_books</i>
+                      <i class="fa fa-book "></i>
                       <span>エンコード / デコード</span>
                     </span>
                   </router-link>
@@ -37,20 +37,20 @@
           </li>
           <li> 
             <router-link :to="{name: 'SampleString.Index'}">
-              <i class="material-icons">library_books</i>
+              <i class="fa fa-book "></i>
               <span>文字列生成</span>
             </router-link>
           </li>
           <li> 
             <router-link :to="{name: 'StrCount.Index'}">
-              <i class="material-icons">library_books</i>
+              <i class="fa fa-book "></i>
               <span>文字数カウント</span>
             </router-link>
           </li>
 
           <li class="sidebar-dropdown"> 
             <a style="cursor: pointer;">
-              <i class="material-icons">work</i>
+              <i class="fa fa-book "></i>
               <span>URL</span>
             </a>
              <div class="sidebar-submenu">
@@ -58,7 +58,7 @@
                 <li>
                   <router-link :to="{name: 'UrlEncode.Index'}">
                     <span @click="closeSideber()">
-                      <i class="material-icons">library_books</i>
+                      <i class="fa fa-book "></i>
                       <span>エンコード / デコード</span>
                     </span>
                   </router-link>
@@ -69,7 +69,7 @@
 
           <li class="sidebar-dropdown"> 
             <a style="cursor: pointer;">
-              <i class="material-icons">work</i>
+              <i class="fa fa-book "></i>
               <span>JSON</span>
             </a>
              <div class="sidebar-submenu">
@@ -77,7 +77,7 @@
                 <li>
                   <router-link :to="{name: 'Json.Index'}">
                     <span @click="closeSideber()">
-                      <i class="material-icons">work</i>
+                      <i class="fa fa-book "></i>
                       <span>エンコード / デコード</span>
                     </span>
                   </router-link>
@@ -88,7 +88,7 @@
 
           <li> 
             <router-link :to="{name: 'Qr.Index'}">
-              <i class="material-icons">library_books</i>
+              <i class="fa fa-book "></i>
               <span>QRコード</span>
             </router-link>
           </li>

@@ -39642,9 +39642,7 @@ var render = function() {
                               }
                             },
                             [
-                              _c("i", { staticClass: "material-icons" }, [
-                                _vm._v("library_books")
-                              ]),
+                              _c("i", { staticClass: "fa fa-book " }),
                               _vm._v(" "),
                               _c("span", [_vm._v("エンコード / デコード")])
                             ]
@@ -39665,9 +39663,7 @@ var render = function() {
                   "router-link",
                   { attrs: { to: { name: "SampleString.Index" } } },
                   [
-                    _c("i", { staticClass: "material-icons" }, [
-                      _vm._v("library_books")
-                    ]),
+                    _c("i", { staticClass: "fa fa-book " }),
                     _vm._v(" "),
                     _c("span", [_vm._v("文字列生成")])
                   ]
@@ -39683,9 +39679,7 @@ var render = function() {
                   "router-link",
                   { attrs: { to: { name: "StrCount.Index" } } },
                   [
-                    _c("i", { staticClass: "material-icons" }, [
-                      _vm._v("library_books")
-                    ]),
+                    _c("i", { staticClass: "fa fa-book " }),
                     _vm._v(" "),
                     _c("span", [_vm._v("文字数カウント")])
                   ]
@@ -39716,9 +39710,7 @@ var render = function() {
                               }
                             },
                             [
-                              _c("i", { staticClass: "material-icons" }, [
-                                _vm._v("library_books")
-                              ]),
+                              _c("i", { staticClass: "fa fa-book " }),
                               _vm._v(" "),
                               _c("span", [_vm._v("エンコード / デコード")])
                             ]
@@ -39754,9 +39746,7 @@ var render = function() {
                               }
                             },
                             [
-                              _c("i", { staticClass: "material-icons" }, [
-                                _vm._v("work")
-                              ]),
+                              _c("i", { staticClass: "fa fa-book " }),
                               _vm._v(" "),
                               _c("span", [_vm._v("エンコード / デコード")])
                             ]
@@ -39774,9 +39764,7 @@ var render = function() {
               "li",
               [
                 _c("router-link", { attrs: { to: { name: "Qr.Index" } } }, [
-                  _c("i", { staticClass: "material-icons" }, [
-                    _vm._v("library_books")
-                  ]),
+                  _c("i", { staticClass: "fa fa-book " }),
                   _vm._v(" "),
                   _c("span", [_vm._v("QRコード")])
                 ])
@@ -39821,7 +39809,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("a", { staticStyle: { cursor: "pointer" } }, [
-      _c("i", { staticClass: "material-icons" }, [_vm._v("work")]),
+      _c("i", { staticClass: "fa fa-book " }),
       _vm._v(" "),
       _c("span", [_vm._v("BASE64")])
     ])
@@ -39831,7 +39819,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("a", { staticStyle: { cursor: "pointer" } }, [
-      _c("i", { staticClass: "material-icons" }, [_vm._v("work")]),
+      _c("i", { staticClass: "fa fa-book " }),
       _vm._v(" "),
       _c("span", [_vm._v("URL")])
     ])
@@ -39841,7 +39829,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("a", { staticStyle: { cursor: "pointer" } }, [
-      _c("i", { staticClass: "material-icons" }, [_vm._v("work")]),
+      _c("i", { staticClass: "fa fa-book " }),
       _vm._v(" "),
       _c("span", [_vm._v("JSON")])
     ])
