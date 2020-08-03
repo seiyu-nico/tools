@@ -7,8 +7,11 @@ import App from './App.vue';
 import store from './store';
 // Analytics用に読み込み
 import './analytics';
+// adsense読み込み
+import './adsense';
 // Vue-Head読み込み
 import './header';
+
 
 new Vue({
   el: '#app',
@@ -17,3 +20,4 @@ new Vue({
   components: { App }, // ルートコンポーネントの使用を宣言する
   template: '<App />' // ルートコンポーネントを描画する
 })
+
