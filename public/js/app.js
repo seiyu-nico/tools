@@ -2037,16 +2037,7 @@ module.exports = {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Header__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/Header */ "./resources/js/components/Header.vue");
 /* harmony import */ var _components_Sidebar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/Sidebar */ "./resources/js/components/Sidebar.vue");
-/* harmony import */ var vue_google_adsense__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vue-google-adsense */ "./node_modules/vue-google-adsense/dist/VueGoogleAdsense.min.js");
-/* harmony import */ var vue_google_adsense__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(vue_google_adsense__WEBPACK_IMPORTED_MODULE_2__);
-//
-//
-//
-//
-//
-//
-//
-//
+/* harmony import */ var _components_GoogleAdsense__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/GoogleAdsense */ "./resources/js/components/GoogleAdsense.vue");
 //
 //
 //
@@ -2075,7 +2066,7 @@ __webpack_require__.r(__webpack_exports__);
   components: {
     Header: _components_Header__WEBPACK_IMPORTED_MODULE_0__["default"],
     Sidebar: _components_Sidebar__WEBPACK_IMPORTED_MODULE_1__["default"],
-    Ads: vue_google_adsense__WEBPACK_IMPORTED_MODULE_2___default.a
+    GoogleAdsense: _components_GoogleAdsense__WEBPACK_IMPORTED_MODULE_2__["default"]
   },
   head: {
     meta: function meta() {
@@ -2086,6 +2077,47 @@ __webpack_require__.r(__webpack_exports__);
         charset: 'utf-8'
       }];
     }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/GoogleAdsense.vue?vue&type=script&lang=js&":
+/*!************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/GoogleAdsense.vue?vue&type=script&lang=js& ***!
+  \************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vue_google_adsense__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue-google-adsense */ "./node_modules/vue-google-adsense/dist/VueGoogleAdsense.min.js");
+/* harmony import */ var vue_google_adsense__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue_google_adsense__WEBPACK_IMPORTED_MODULE_0__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      env: "local"
+    };
+  },
+  components: {
+    Ads: vue_google_adsense__WEBPACK_IMPORTED_MODULE_0___default.a
   }
 });
 
@@ -39397,36 +39429,21 @@ var render = function() {
         [
           _c("Sidebar"),
           _vm._v(" "),
-          _c("main", { staticClass: "page-content" }, [
-            _c(
-              "div",
-              { staticClass: "container-fluid", attrs: { id: "router" } },
-              [
-                _c("transition", [_c("RouterView")], 1),
-                _vm._v(" "),
-                "local" != _vm.env
-                  ? _c(
-                      "div",
-                      { staticClass: "my-3" },
-                      [
-                        _c("Adsense", {
-                          staticClass: "adsbygoogle",
-                          staticStyle: { display: "block" },
-                          attrs: {
-                            "data-ad-client": "ca-pub-4233715685036127",
-                            "data-ad-slot": "4004178322",
-                            "data-ad-format": "auto",
-                            "data-full-width-responsive": "true"
-                          }
-                        })
-                      ],
-                      1
-                    )
-                  : _vm._e()
-              ],
-              1
-            )
-          ])
+          _c(
+            "main",
+            { staticClass: "page-content" },
+            [
+              _c(
+                "div",
+                { staticClass: "container-fluid", attrs: { id: "router" } },
+                [_c("transition", [_c("RouterView")], 1)],
+                1
+              ),
+              _vm._v(" "),
+              _c("GoogleAdsense")
+            ],
+            1
+          )
         ],
         1
       )
@@ -39457,6 +39474,51 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [_c("router-view")], 1)
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/GoogleAdsense.vue?vue&type=template&id=0835ff97&":
+/*!****************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/GoogleAdsense.vue?vue&type=template&id=0835ff97& ***!
+  \****************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    "local" != _vm.env
+      ? _c(
+          "div",
+          { staticClass: "my-3" },
+          [
+            _c("Adsense", {
+              attrs: {
+                "ins-class": "adsbygoogle",
+                "ins-style": "display:block;",
+                "data-ad-client": "ca-pub-4233715685036127",
+                "data-ad-slot": "4004178322",
+                "data-ad-format": "auto"
+              }
+            })
+          ],
+          1
+        )
+      : _c("div", { staticClass: "border" }, [
+          _vm._v("\n    ローカル環境ではAdsenseは表示されません\n  ")
+        ])
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -56404,6 +56466,75 @@ __webpack_require__.r(__webpack_exports__);
     }
   }]
 });
+
+/***/ }),
+
+/***/ "./resources/js/components/GoogleAdsense.vue":
+/*!***************************************************!*\
+  !*** ./resources/js/components/GoogleAdsense.vue ***!
+  \***************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _GoogleAdsense_vue_vue_type_template_id_0835ff97___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./GoogleAdsense.vue?vue&type=template&id=0835ff97& */ "./resources/js/components/GoogleAdsense.vue?vue&type=template&id=0835ff97&");
+/* harmony import */ var _GoogleAdsense_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./GoogleAdsense.vue?vue&type=script&lang=js& */ "./resources/js/components/GoogleAdsense.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _GoogleAdsense_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _GoogleAdsense_vue_vue_type_template_id_0835ff97___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _GoogleAdsense_vue_vue_type_template_id_0835ff97___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/GoogleAdsense.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/GoogleAdsense.vue?vue&type=script&lang=js&":
+/*!****************************************************************************!*\
+  !*** ./resources/js/components/GoogleAdsense.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_GoogleAdsense_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./GoogleAdsense.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/GoogleAdsense.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_GoogleAdsense_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/GoogleAdsense.vue?vue&type=template&id=0835ff97&":
+/*!**********************************************************************************!*\
+  !*** ./resources/js/components/GoogleAdsense.vue?vue&type=template&id=0835ff97& ***!
+  \**********************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_GoogleAdsense_vue_vue_type_template_id_0835ff97___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./GoogleAdsense.vue?vue&type=template&id=0835ff97& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/GoogleAdsense.vue?vue&type=template&id=0835ff97&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_GoogleAdsense_vue_vue_type_template_id_0835ff97___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_GoogleAdsense_vue_vue_type_template_id_0835ff97___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
 
 /***/ }),
 
