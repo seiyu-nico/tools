@@ -8,13 +8,15 @@
           <transition>
             <RouterView />
           </transition>
-          <Adsense 
-            class="adsbygoogle"
-            style="display:block"
-            data-ad-client="ca-pub-4233715685036127" 
-            data-ad-slot="4004178322"
-            data-ad-format="auto"
-            data-full-width-responsive="true"></Adsense>
+          <div v-if="'local' != env" class="my-3">
+            <Adsense 
+              class="adsbygoogle"
+              style="display:block"
+              data-ad-client="ca-pub-4233715685036127" 
+              data-ad-slot="4004178322"
+              data-ad-format="auto"
+              data-full-width-responsive="true"></Adsense>
+          </div>
         </div>
       </main>
     </div>
@@ -26,6 +28,11 @@ import Sidebar from './components/Sidebar';
 import Ads from 'vue-google-adsense';
 
 export default {
+  data: function() {
+    return {
+      env: process.env.MIX_APP_ENV
+    }
+  },
   components : {
     Header,
     Sidebar,

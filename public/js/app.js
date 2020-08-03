@@ -2061,10 +2061,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      env: "local"
+    };
+  },
   components: {
     Header: _components_Header__WEBPACK_IMPORTED_MODULE_0__["default"],
     Sidebar: _components_Sidebar__WEBPACK_IMPORTED_MODULE_1__["default"],
@@ -39397,16 +39404,25 @@ var render = function() {
               [
                 _c("transition", [_c("RouterView")], 1),
                 _vm._v(" "),
-                _c("Adsense", {
-                  staticClass: "adsbygoogle",
-                  staticStyle: { display: "block" },
-                  attrs: {
-                    "data-ad-client": "ca-pub-4233715685036127",
-                    "data-ad-slot": "4004178322",
-                    "data-ad-format": "auto",
-                    "data-full-width-responsive": "true"
-                  }
-                })
+                "local" != _vm.env
+                  ? _c(
+                      "div",
+                      { staticClass: "my-3" },
+                      [
+                        _c("Adsense", {
+                          staticClass: "adsbygoogle",
+                          staticStyle: { display: "block" },
+                          attrs: {
+                            "data-ad-client": "ca-pub-4233715685036127",
+                            "data-ad-slot": "4004178322",
+                            "data-ad-format": "auto",
+                            "data-full-width-responsive": "true"
+                          }
+                        })
+                      ],
+                      1
+                    )
+                  : _vm._e()
               ],
               1
             )
