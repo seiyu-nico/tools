@@ -57723,6 +57723,9 @@ var mutations = {
   setParams: function setParams(state, data) {
     state.params[data.key] = data.value;
   },
+  setColorParams: function setColorParams(state, data) {
+    state.params[data.key][data.sub_key] = data.value;
+  },
   setQr: function setQr(state, data) {
     state.base64_qr = data;
   },
@@ -57749,14 +57752,32 @@ var actions = {
       }, _callee);
     }))();
   },
-  create: function create(context, params) {
+  updateColorParams: function updateColorParams(context, data) {
     return _asyncToGenerator(
     /*#__PURE__*/
     _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2() {
-      var config, response;
       return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
         while (1) {
           switch (_context2.prev = _context2.next) {
+            case 0:
+              context.commit('setColorParams', data);
+
+            case 1:
+            case "end":
+              return _context2.stop();
+          }
+        }
+      }, _callee2);
+    }))();
+  },
+  create: function create(context, params) {
+    return _asyncToGenerator(
+    /*#__PURE__*/
+    _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee3() {
+      var config, response;
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee3$(_context3) {
+        while (1) {
+          switch (_context3.prev = _context3.next) {
             case 0:
               config = {
                 headers: {
@@ -57765,21 +57786,21 @@ var actions = {
               }; // APIを投げる前にエラーを空にする
 
               context.commit('setErrors', {});
-              _context2.next = 4;
+              _context3.next = 4;
               return axios.post('/api/qr', params, config)["catch"](function (error) {
                 return error.response || error;
               });
 
             case 4:
-              response = _context2.sent;
+              response = _context3.sent;
 
               if (!(_util__WEBPACK_IMPORTED_MODULE_1__["CREATED"] === response.status)) {
-                _context2.next = 10;
+                _context3.next = 10;
                 break;
               }
 
               context.commit('setQr', response.data.qr);
-              return _context2.abrupt("return", response);
+              return _context3.abrupt("return", response);
 
             case 10:
               if (_util__WEBPACK_IMPORTED_MODULE_1__["VALIDATE_ERROR"] === response.status) {
@@ -57788,10 +57809,10 @@ var actions = {
 
             case 11:
             case "end":
-              return _context2.stop();
+              return _context3.stop();
           }
         }
-      }, _callee2);
+      }, _callee3);
     }))();
   }
 };

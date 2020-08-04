@@ -65,6 +65,49 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -136,6 +179,13 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           }
         }, _callee2);
       }))();
+    },
+    updateColor: function updateColor(key, sub_key, evnet) {
+      this.$store.dispatch('qr/updateColorParams', {
+        'key': key,
+        'sub_key': sub_key,
+        'value': event.target.value
+      });
     }
   },
   computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapState"])({
@@ -172,7 +222,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.custom-file-input:lang(ja) ~ .custom-file-label::after {\n  content: \"\\53C2\\7167\";\n}\n", ""]);
+exports.push([module.i, "\n.custom-file-input:lang(ja) ~ .custom-file-label::after {\n  content: \"\\53C2\\7167\";\n}\n.rbg-text {\n  color:white;\n}\n.view_color {\n  width: 100%;\n  height: 100%;\n  border-radius: 10px;\n}\n", ""]);
 
 // exports
 
@@ -238,7 +288,7 @@ var render = function() {
           [
             _c("textarea", {
               class: [_vm.errors.text ? "is-invalid" : "", "form-control"],
-              attrs: { id: "QrFormControlTextarea2", rows: "3" },
+              attrs: { id: "QrFormControlTextarea2", rows: "5" },
               domProps: { value: _vm.params.text },
               on: {
                 input: function($event) {
@@ -259,46 +309,217 @@ var render = function() {
           ],
           2
         )
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "form-group col-4" }, [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "form-group col-12" }, [
+            _c("label", { attrs: { for: "exampleFormControlTextarea1" } }, [
+              _vm._v("大きさ(px)")
+            ]),
+            _vm._v(" "),
+            _c("input", {
+              staticClass: "form-control",
+              attrs: { type: "number" },
+              domProps: { value: _vm.params.size },
+              on: {
+                input: function($event) {
+                  return _vm.updateParams("size", $event)
+                }
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-group col-12" }, [
+            _c("label", { attrs: { for: "inputImages" } }, [_vm._v("画像")]),
+            _vm._v(" "),
+            _c("div", { staticClass: "custom-file" }, [
+              _c("input", {
+                staticClass: "custom-file-input",
+                attrs: { type: "file", id: "customFile" },
+                on: {
+                  change: function($event) {
+                    return _vm.selectFile("image", $event)
+                  }
+                }
+              }),
+              _vm._v(" "),
+              _c(
+                "label",
+                {
+                  staticClass: "custom-file-label",
+                  attrs: { for: "customFile" }
+                },
+                [_vm._v(_vm._s(_vm.file_name))]
+              )
+            ])
+          ])
+        ])
       ])
     ]),
     _vm._v(" "),
     _c("div", { staticClass: "row" }, [
       _c("div", { staticClass: "form-group col-2" }, [
-        _c("label", { attrs: { for: "exampleFormControlTextarea1" } }, [
-          _vm._v("大きさ(px)")
-        ]),
-        _vm._v(" "),
-        _c("input", {
-          staticClass: "form-control",
-          attrs: { type: "number" },
-          domProps: { value: _vm.params.size },
-          on: {
-            input: function($event) {
-              return _vm.updateParams("size", $event)
-            }
+        _c("div", {
+          staticClass: "view_color border border-dark",
+          style: {
+            background:
+              "rgb(" +
+              _vm.params.color.r +
+              ", " +
+              _vm.params.color.g +
+              ", " +
+              _vm.params.color.b +
+              ")"
           }
         })
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "form-group col-4" }, [
-        _c("label", { attrs: { for: "inputImages" } }, [_vm._v("画像")]),
+      _c("div", { staticClass: "form-group color-form col-4" }, [
+        _c("label", { attrs: { for: "exampleFormControlTextarea1" } }, [
+          _vm._v("点の色")
+        ]),
         _vm._v(" "),
-        _c("div", { staticClass: "custom-file" }, [
+        _c("div", { staticClass: "rbg-text" }, [
+          _c(
+            "span",
+            { style: { background: "rgb(" + _vm.params.color.r + ", 0, 0)" } },
+            [_vm._v("R")]
+          ),
+          _vm._v(" "),
           _c("input", {
-            staticClass: "custom-file-input",
-            attrs: { type: "file", id: "customFile" },
+            attrs: { type: "range", name: "r", id: "r", max: "255" },
+            domProps: { value: _vm.params.color.r },
             on: {
               change: function($event) {
-                return _vm.selectFile("image", $event)
+                return _vm.updateColor("color", "r", $event)
               }
             }
-          }),
-          _vm._v(" "),
+          })
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "rbg-text" }, [
           _c(
-            "label",
-            { staticClass: "custom-file-label", attrs: { for: "customFile" } },
-            [_vm._v(_vm._s(_vm.file_name))]
-          )
+            "span",
+            { style: { background: "rgb(0, " + _vm.params.color.g + ", 0)" } },
+            [_vm._v("G")]
+          ),
+          _vm._v(" "),
+          _c("input", {
+            attrs: { type: "range", name: "g", id: "g", max: "255" },
+            domProps: { value: _vm.params.color.g },
+            on: {
+              change: function($event) {
+                return _vm.updateColor("color", "g", $event)
+              }
+            }
+          })
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "rbg-text" }, [
+          _c(
+            "span",
+            { style: { background: "rgb(0, 0, " + _vm.params.color.b + ")" } },
+            [_vm._v("B")]
+          ),
+          _vm._v(" "),
+          _c("input", {
+            attrs: { type: "range", name: "b", id: "b", max: "255" },
+            domProps: { value: _vm.params.color.b },
+            on: {
+              change: function($event) {
+                return _vm.updateColor("color", "b", $event)
+              }
+            }
+          })
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "form-group col-2" }, [
+        _c("div", {
+          staticClass: "view_color border border-dark",
+          style: {
+            background:
+              "rgb(" +
+              _vm.params.background_color.r +
+              ", " +
+              _vm.params.background_color.g +
+              ", " +
+              _vm.params.background_color.b +
+              ")"
+          }
+        })
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "form-group color-form col-4" }, [
+        _c("label", { attrs: { for: "exampleFormControlTextarea1" } }, [
+          _vm._v("背景色")
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "rbg-text" }, [
+          _c(
+            "span",
+            {
+              style: {
+                background: "rgb(" + _vm.params.background_color.r + ", 0, 0)"
+              }
+            },
+            [_vm._v("R")]
+          ),
+          _vm._v(" "),
+          _c("input", {
+            attrs: { type: "range", name: "r", id: "r", max: "255" },
+            domProps: { value: _vm.params.background_color.r },
+            on: {
+              change: function($event) {
+                return _vm.updateColor("background_color", "r", $event)
+              }
+            }
+          })
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "rbg-text" }, [
+          _c(
+            "span",
+            {
+              style: {
+                background: "rgb(0, " + _vm.params.background_color.g + ", 0)"
+              }
+            },
+            [_vm._v("G")]
+          ),
+          _vm._v(" "),
+          _c("input", {
+            attrs: { type: "range", name: "g", id: "g", max: "255" },
+            domProps: { value: _vm.params.background_color.g },
+            on: {
+              change: function($event) {
+                return _vm.updateColor("background_color", "g", $event)
+              }
+            }
+          })
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "rbg-text" }, [
+          _c(
+            "span",
+            {
+              style: {
+                background: "rgb(0, 0, " + _vm.params.background_color.b + ")"
+              }
+            },
+            [_vm._v("B")]
+          ),
+          _vm._v(" "),
+          _c("input", {
+            attrs: { type: "range", name: "b", id: "b", max: "255" },
+            domProps: { value: _vm.params.background_color.b },
+            on: {
+              change: function($event) {
+                return _vm.updateColor("background_color", "b", $event)
+              }
+            }
+          })
         ])
       ])
     ]),

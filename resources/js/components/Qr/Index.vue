@@ -5,7 +5,7 @@
       <div class="form-group col-8">
         <label for="QrFormControlTextarea2">テキスト</label>
         <div>
-          <textarea id="QrFormControlTextarea2" rows="3"
+          <textarea id="QrFormControlTextarea2" rows="5"
             :value="params.text" @input="updateParams('text', $event)" 
             :class="[errors.text ? 'is-invalid' : '', 'form-control']"></textarea>
           <template v-if="errors.text">
@@ -13,21 +13,64 @@
           </template>  
         </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="form-group col-2">
-        <label for="exampleFormControlTextarea1">大きさ(px)</label>
-        <input class="form-control"  type="number" :value="params.size" @input="updateParams('size', $event)">
-      </div>
       <div class="form-group col-4">
-        <label for="inputImages" class="">画像</label>
-        <div class="custom-file">
-          <input type="file" class="custom-file-input" id="customFile"
-            @change="selectFile('image', $event)">
-          <label class="custom-file-label" for="customFile">{{file_name}}</label>
+        <div class="row">
+          <div class="form-group col-12">
+            <label for="exampleFormControlTextarea1">大きさ(px)</label>
+            <input class="form-control"  type="number" :value="params.size" @input="updateParams('size', $event)">
+          </div>
+          <div class="form-group col-12">
+            <label for="inputImages" class="">画像</label>
+            <div class="custom-file">
+              <input type="file" class="custom-file-input" id="customFile"
+                @change="selectFile('image', $event)">
+              <label class="custom-file-label" for="customFile">{{file_name}}</label>
+            </div>
+          </div>
         </div>
       </div>
     </div>
+
+    <!-- 色 -->
+    <div class="row">
+      <div class="form-group col-2">
+        <div class="view_color border border-dark" :style="{background: 'rgb(' + params.color.r + ', ' + params.color.g + ', ' + params.color.b + ')'}"></div>
+      </div>
+      <div class="form-group color-form col-4">
+        <label for="exampleFormControlTextarea1">点の色</label>
+        <div class="rbg-text">
+          <span :style="{background: 'rgb(' + params.color.r +', 0, 0)'}">R</span>
+          <input type="range" name="r" id="r" max="255" :value="params.color.r" @change="updateColor('color', 'r', $event)">
+        </div>
+        <div class="rbg-text">
+          <span :style="{background: 'rgb(0, ' + params.color.g + ', 0)'}">G</span>
+          <input type="range" name="g" id="g" max="255" :value="params.color.g" @change="updateColor('color', 'g', $event)">
+        </div>
+        <div class="rbg-text">
+          <span :style="{background: 'rgb(0, 0, ' + params.color.b + ')'}">B</span>
+          <input type="range" name="b" id="b" max="255" :value="params.color.b" @change="updateColor('color', 'b', $event)">
+        </div>
+      </div>
+      <div class="form-group col-2">
+        <div class="view_color border border-dark" :style="{background: 'rgb(' + params.background_color.r + ', ' + params.background_color.g + ', ' + params.background_color.b + ')'}"></div>
+      </div>
+      <div class="form-group color-form col-4">
+        <label for="exampleFormControlTextarea1">背景色</label>
+        <div class="rbg-text">
+          <span :style="{background: 'rgb(' + params.background_color.r +', 0, 0)'}">R</span>
+          <input type="range" name="r" id="r" max="255" :value="params.background_color.r" @change="updateColor('background_color', 'r', $event)">
+        </div>
+        <div class="rbg-text">
+          <span :style="{background: 'rgb(0, ' + params.background_color.g + ', 0)'}">G</span>
+          <input type="range" name="g" id="g" max="255" :value="params.background_color.g" @change="updateColor('background_color', 'g', $event)">
+        </div>
+        <div class="rbg-text">
+          <span :style="{background: 'rgb(0, 0, ' + params.background_color.b + ')'}">B</span>
+          <input type="range" name="b" id="b" max="255" :value="params.background_color.b" @change="updateColor('background_color', 'b', $event)">
+        </div>
+      </div>
+    </div>
+    <!-- /色 -->
     <div class="row">
       <div class="col-2">
         <button type="button" class="btn btn-primary" @click="create()">作成</button>
@@ -65,6 +108,9 @@ export default {
       const params = await this.createFormData('', this.params);
       this.$store.dispatch('qr/create', params);
     },
+    updateColor(key, sub_key, evnet) {
+      this.$store.dispatch('qr/updateColorParams', {'key': key, 'sub_key': sub_key, 'value': event.target.value });
+    }
   },
   computed: {
     ...mapState({
@@ -85,5 +131,13 @@ export default {
 <style>
 .custom-file-input:lang(ja) ~ .custom-file-label::after {
   content: "参照";
+}
+.rbg-text {
+  color:white;
+}
+.view_color {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
 }
 </style>

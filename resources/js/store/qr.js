@@ -27,6 +27,9 @@ const mutations = {
   setParams(state, data) {
     state.params[data.key] = data.value;
   },
+  setColorParams(state, data) {
+    state.params[data.key][data.sub_key] = data.value;
+  },
   setQr (state, data) {
     state.base64_qr = data;
   },
@@ -38,6 +41,9 @@ const mutations = {
 const actions = {
   async updateParams(context, data) {
     context.commit('setParams', data);
+  },
+  async updateColorParams(context, data) {
+    context.commit('setColorParams', data);
   },
   async create(context, params) {
     const config = {
