@@ -3,13 +3,13 @@ import {CREATED, VALIDATE_ERROR, INTERNAL_SERVER_ERROR } from '../util';
 const state = {
   params: {
     text: '',
-    size: 100,
+    size: 300,
     image: '',
     color: {
-      
+      'r': 0, 'g': 0, 'b': 0, 'a': 0,
     },
     background_color: {
-
+      'r': 255, 'g': 255, 'b': 255, 'a': 0,
     },
     error_correction: 'H',
   },
@@ -39,11 +39,7 @@ const actions = {
   async updateParams(context, data) {
     context.commit('setParams', data);
   },
-  async create(context) {
-    const params = new FormData();
-    for(let key of Object.keys(context.state.params)) {
-      params.append(key, context.state.params[key]);
-    }
+  async create(context, params) {
     const config = {
       headers: {
           'content-type': 'multipart/form-data',

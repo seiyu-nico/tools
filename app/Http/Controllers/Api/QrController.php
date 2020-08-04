@@ -16,15 +16,16 @@ class QrController extends Controller
 {
     public function create(QCR $request, QrCode $QrCode)
     {
+        Log::info($request);
         // QRコードオブジェクトの生成
         $QrCode->setText($request->text);
         $QrCode->setSize($request->size);
         // エラー訂正レベル
         $QrCode->setErrorCorrectionLevel(ErrorCorrectionLevel::HIGH());
         // 点の色
-        $QrCode->setForegroundColor(array('r' => 0, 'g' => 0, 'b' => 0, 'a' => 0));
+        $QrCode->setForegroundColor($request->color);
         // 背景色
-        $QrCode->setBackgroundColor(array('r' => 255, 'g' => 255, 'b' => 255, 'a' => 0));
+        $QrCode->setBackgroundColor($request->background_color);
         // ラベル(画像の下に表示する文言)
         // $QrCode->setLabel('My label');
         // ラベル文字のフォント

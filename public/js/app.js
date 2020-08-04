@@ -57698,10 +57698,20 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 var state = {
   params: {
     text: '',
-    size: 100,
+    size: 300,
     image: '',
-    color: {},
-    background_color: {},
+    color: {
+      'r': 0,
+      'g': 0,
+      'b': 0,
+      'a': 0
+    },
+    background_color: {
+      'r': 255,
+      'g': 255,
+      'b': 255,
+      'a': 0
+    },
     error_correction: 'H'
   },
   error_corrections: ['L', 'Q', 'M', 'H'],
@@ -57739,23 +57749,15 @@ var actions = {
       }, _callee);
     }))();
   },
-  create: function create(context) {
+  create: function create(context, params) {
     return _asyncToGenerator(
     /*#__PURE__*/
     _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2() {
-      var params, _i, _Object$keys, key, config, response;
-
+      var config, response;
       return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
         while (1) {
           switch (_context2.prev = _context2.next) {
             case 0:
-              params = new FormData();
-
-              for (_i = 0, _Object$keys = Object.keys(context.state.params); _i < _Object$keys.length; _i++) {
-                key = _Object$keys[_i];
-                params.append(key, context.state.params[key]);
-              }
-
               config = {
                 headers: {
                   'content-type': 'multipart/form-data'
@@ -57763,28 +57765,28 @@ var actions = {
               }; // APIを投げる前にエラーを空にする
 
               context.commit('setErrors', {});
-              _context2.next = 6;
+              _context2.next = 4;
               return axios.post('/api/qr', params, config)["catch"](function (error) {
                 return error.response || error;
               });
 
-            case 6:
+            case 4:
               response = _context2.sent;
 
               if (!(_util__WEBPACK_IMPORTED_MODULE_1__["CREATED"] === response.status)) {
-                _context2.next = 12;
+                _context2.next = 10;
                 break;
               }
 
               context.commit('setQr', response.data.qr);
               return _context2.abrupt("return", response);
 
-            case 12:
+            case 10:
               if (_util__WEBPACK_IMPORTED_MODULE_1__["VALIDATE_ERROR"] === response.status) {
                 context.commit('setErrors', response.data.errors);
               }
 
-            case 13:
+            case 11:
             case "end":
               return _context2.stop();
           }

@@ -40,7 +40,9 @@
 </template>
 <script>
 import { mapState } from 'vuex';
+import FormData from '../../mixin/FormData';
 export default {
+    mixins: [FormData],
   data: function() {
     return {
       file_name: 'ファイル選択...',
@@ -60,7 +62,8 @@ export default {
       this.$store.dispatch('qr/updateParams', { 'key': key, 'value': event.target.files[0] });
     },
     async create() {
-      this.$store.dispatch('qr/create');
+      const params = await this.createFormData('', this.params);
+      this.$store.dispatch('qr/create', params);
     },
   },
   computed: {
