@@ -77,6 +77,8 @@ export default {
       { property: 'og:url', content: 'https://tools.seiyu-nico.jp/url/' },
       { property: 'og:image', content: 'https://img.seiyu-nico.jp/icon/nico_icon.jpg' },
       { property: 'og:site_name', content: 'せぃゆーTools' },
+      { name: 'twitter:card', content: 'summary' },
+      { name: 'twitter:site', content: '@seiyu_nico' },
     ]
   }
 }
