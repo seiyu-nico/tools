@@ -104,7 +104,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       content: 'https://tools.seiyu-nico.jp/sample-string/'
     }, {
       property: 'og:image',
-      content: ''
+      content: 'https://img.seiyu-nico.jp/icon/nico_icon.jpg'
     }, {
       property: 'og:site_name',
       content: 'せぃゆーTools'

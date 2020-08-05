@@ -61,7 +61,7 @@ __webpack_require__.r(__webpack_exports__);
       content: 'https://tools.seiyu-nico.jp'
     }, {
       property: 'og:image',
-      content: ''
+      content: 'https://img.seiyu-nico.jp/icon/nico_icon.jpg'
     }, {
       property: 'og:site_name',
       content: 'せぃゆーTools'
@@ -209,7 +209,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       content: 'https://tools.seiyu-nico.jp/json/'
     }, {
       property: 'og:image',
-      content: ''
+      content: 'https://img.seiyu-nico.jp/icon/nico_icon.jpg'
     }, {
       property: 'og:site_name',
       content: 'せぃゆーTools'

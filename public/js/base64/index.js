@@ -169,7 +169,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       content: 'https://tools.seiyu-nico.jp/base64/'
     }, {
       property: 'og:image',
-      content: ''
+      content: 'https://img.seiyu-nico.jp/icon/nico_icon.jpg'
     }, {
       property: 'og:site_name',
       content: 'せぃゆーTools'
