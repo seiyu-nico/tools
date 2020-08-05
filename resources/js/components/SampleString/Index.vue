@@ -71,7 +71,7 @@ export default {
       { property: 'og:title', content: 'せぃゆーの便利ツール(サンプル文字列作成)' },
       { property: 'og:type', content: 'article' },
       { property: 'og:url', content: 'https://tools.seiyu-nico.jp/sample-string/' },
-      { property: 'og:image', content: '' },
+      { property: 'og:image', content: 'https://img.seiyu-nico.jp/icon/nico_icon.jpg' },
       { property: 'og:site_name', content: 'せぃゆーTools' },
     ]
   }

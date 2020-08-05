@@ -46,7 +46,7 @@ export default {
       { property: 'og:title', content: 'せぃゆーの便利ツール(文字数カウント)' },
       { property: 'og:type', content: 'article' },
       { property: 'og:url', content: 'https://tools.seiyu-nico.jp/str-count/' },
-      { property: 'og:image', content: '' },
+      { property: 'og:image', content: 'https://img.seiyu-nico.jp/icon/nico_icon.jpg' },
       { property: 'og:site_name', content: 'せぃゆーTools' },
     ]
   }

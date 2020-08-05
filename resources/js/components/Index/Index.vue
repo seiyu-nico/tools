@@ -40,7 +40,7 @@ export default {
       { property: 'og:title', content: 'せぃゆーの便利ツール' },
       { property: 'og:type', content: 'website' },
       { property: 'og:url', content: 'https://tools.seiyu-nico.jp' },
-      { property: 'og:image', content: '' },
+      { property: 'og:image', content: 'https://img.seiyu-nico.jp/icon/nico_icon.jpg' },
       { property: 'og:site_name', content: 'せぃゆーTools' },
     ]
   }
