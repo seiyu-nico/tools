@@ -125,6 +125,15 @@ export default {
       separator: '|',
       complement: 'QRコード作成'
     },
+    meta: [
+      { name: 'description', content: 'ブラウザ上でQRコードの作成が可能です。画像の追加, 色の変更もすることが可能です。' },
+      { property: 'og:description', content: 'ブラウザ上でQRコードの作成が可能です。画像の追加, 色の変更もすることが可能です。' },
+      { property: 'og:title', content: 'せぃゆーの便利ツール(QRコード)' },
+      { property: 'og:type', content: 'article' },
+      { property: 'og:url', content: 'https://tools.seiyu-nico.jp/qr/' },
+      { property: 'og:image', content: '' },
+      { property: 'og:site_name', content: 'せぃゆーTools' },
+    ]
   }
 }
 </script>

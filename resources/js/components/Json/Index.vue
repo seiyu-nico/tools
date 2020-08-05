@@ -59,6 +59,15 @@ export default {
       separator: '|',
       complement: 'JSON エンコード/デコード'
     },
+    meta: [
+      { name: 'description', content: 'Jsonエンコード/デコードをブラウザ上で行うことができます。' },
+      { property: 'og:description', content: 'Jsonエンコード/デコードをブラウザ上で行うことができます。' },
+      { property: 'og:title', content: 'せぃゆーの便利ツール(Jsonエンコード/デコード)' },
+      { property: 'og:type', content: 'article' },
+      { property: 'og:url', content: 'https://tools.seiyu-nico.jp/json/' },
+      { property: 'og:image', content: '' },
+      { property: 'og:site_name', content: 'せぃゆーTools' },
+    ]
   }
 }
 </script>

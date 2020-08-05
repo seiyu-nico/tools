@@ -49,7 +49,29 @@ __webpack_require__.r(__webpack_exports__);
       inner: "便利ツール",
       separator: '|',
       complement: '文字数カウント'
-    }
+    },
+    meta: [{
+      name: 'description',
+      content: '入力された文字列が何文字かカウントしてくれます。論文/感想文などの文字数指定で利用することができます。'
+    }, {
+      property: 'og:description',
+      content: '入力された文字列が何文字かカウントしてくれます。論文/感想文などの文字数指定で利用することができます。'
+    }, {
+      property: 'og:title',
+      content: 'せぃゆーの便利ツール(文字数カウント)'
+    }, {
+      property: 'og:type',
+      content: 'article'
+    }, {
+      property: 'og:url',
+      content: 'https://tools.seiyu-nico.jp/str-count/'
+    }, {
+      property: 'og:image',
+      content: ''
+    }, {
+      property: 'og:site_name',
+      content: 'せぃゆーTools'
+    }]
   }
 });
 

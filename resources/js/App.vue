@@ -31,12 +31,15 @@ export default {
     GoogleAdsense,
   },
   head: {
-    meta() {
-      return [
-          { name: 'viewport', content: 'width=device-width, initial-scale=1, shrink-to-fit=no' },
-          { charset: 'utf-8' },
-        ]
-    },
+    meta: [
+      { name: 'description', content: '業務で利用する便利な機能が詰まったサイト。base64(エンコード/デコード), QRコード作成, json(エンコード/デコード)' },
+      { property: 'og:description', content: '業務で利用する便利な機能が詰まったサイト。base64(エンコード/デコード), QRコード作成, json(エンコード/デコード)' },
+      { property: 'og:title', content: 'せぃゆーの便利ツール' },
+      { property: 'og:type', content: 'website' },
+      { property: 'og:url', content: 'https://tools.seiyu-nico.jp' },
+      { property: 'og:image', content: '' },
+      { property: 'og:site_name', content: 'せぃゆーTools' },
+    ]
   },
 }
 </script>

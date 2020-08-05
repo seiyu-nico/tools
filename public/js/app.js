@@ -43,7 +43,7 @@
 /******/
 /******/ 	// script path function
 /******/ 	function jsonpScriptSrc(chunkId) {
-/******/ 		return __webpack_require__.p + "js/" + ({"base64/index":"base64/index","json/index":"json/index","qr/index":"qr/index","sample-string/index":"sample-string/index","str-count/index":"str-count/index","url-encode/index":"url-encode/index"}[chunkId]||chunkId) + ".js"
+/******/ 		return __webpack_require__.p + "js/" + ({"base64/index":"base64/index","json/index":"json/index","qr/index":"qr/index","sample-string/index":"sample-string/index","str-count/index":"str-count/index","url/index":"url/index"}[chunkId]||chunkId) + ".js"
 /******/ 	}
 /******/
 /******/ 	// The require function
@@ -2069,14 +2069,28 @@ __webpack_require__.r(__webpack_exports__);
     GoogleAdsense: _components_GoogleAdsense__WEBPACK_IMPORTED_MODULE_2__["default"]
   },
   head: {
-    meta: function meta() {
-      return [{
-        name: 'viewport',
-        content: 'width=device-width, initial-scale=1, shrink-to-fit=no'
-      }, {
-        charset: 'utf-8'
-      }];
-    }
+    meta: [{
+      name: 'description',
+      content: '業務で利用する便利な機能が詰まったサイト。base64(エンコード/デコード), QRコード作成, json(エンコード/デコード)'
+    }, {
+      property: 'og:description',
+      content: '業務で利用する便利な機能が詰まったサイト。base64(エンコード/デコード), QRコード作成, json(エンコード/デコード)'
+    }, {
+      property: 'og:title',
+      content: 'せぃゆーの便利ツール'
+    }, {
+      property: 'og:type',
+      content: 'website'
+    }, {
+      property: 'og:url',
+      content: 'https://tools.seiyu-nico.jp'
+    }, {
+      property: 'og:image',
+      content: ''
+    }, {
+      property: 'og:site_name',
+      content: 'せぃゆーTools'
+    }]
   }
 });
 
@@ -39813,7 +39827,7 @@ var render = function() {
                     [
                       _c(
                         "router-link",
-                        { attrs: { to: { name: "UrlEncode.Index" } } },
+                        { attrs: { to: { name: "Url.Index" } } },
                         [
                           _c(
                             "span",
@@ -57147,13 +57161,13 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  path: '/url-encode',
+  path: '/url',
   component: _Router__WEBPACK_IMPORTED_MODULE_0__["default"],
   children: [{
     path: '',
-    name: 'UrlEncode.Index',
+    name: 'Url.Index',
     component: function component(resolve) {
-      __webpack_require__.e(/*! require.ensure | url-encode/index */ "url-encode/index").then((function () {
+      __webpack_require__.e(/*! require.ensure | url/index */ "url/index").then((function () {
         resolve(__webpack_require__(/*! ./Index.vue */ "./resources/js/components/UrlEncode/Index.vue"));
       }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
     }

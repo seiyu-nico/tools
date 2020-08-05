@@ -1,10 +1,11 @@
 {
-    "/js/app.js": "/js/app.js?id=5ce589881115a2b18996",
+    "/js/app.js": "/js/app.js?id=aa1b3ae09ed931a3416c",
     "/css/app.css": "/css/app.css?id=602f4ee5bf23157bb0ae",
-    "/js/base64/index.js": "/js/base64/index.js?id=3bc754b6cb70b3199c49",
-    "/js/json/index.js": "/js/json/index.js?id=ee107690bac176a5f2a5",
-    "/js/qr/index.js": "/js/qr/index.js?id=9507e2b55d577f160e00",
-    "/js/sample-string/index.js": "/js/sample-string/index.js?id=ae7ff61ef032a5c29765",
-    "/js/str-count/index.js": "/js/str-count/index.js?id=d22146153f987a93ec42",
-    "/js/url-encode/index.js": "/js/url-encode/index.js?id=6a6923e0a8171ab57888"
+    "/js/base64/index.js": "/js/base64/index.js?id=d49b99a9accc78b93c0a",
+    "/js/json/index.js": "/js/json/index.js?id=e9a045d3fdabeb73547f",
+    "/js/qr/index.js": "/js/qr/index.js?id=651d6293d3c102a0967b",
+    "/js/sample-string/index.js": "/js/sample-string/index.js?id=fdadda332892d3a93233",
+    "/js/str-count/index.js": "/js/str-count/index.js?id=00314d44ae2484a4bfd3",
+    "/js/url-encode/index.js": "/js/url-encode/index.js?id=eda884099350fdacece6",
+    "/js/url/index.js": "/js/url/index.js?id=7f52840f399f676a6bbd"
 }

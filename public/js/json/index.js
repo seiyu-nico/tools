@@ -43,7 +43,29 @@ __webpack_require__.r(__webpack_exports__);
       inner: "便利ツール",
       separator: '|',
       complement: 'TOPページ'
-    }
+    },
+    meta: [{
+      name: 'description',
+      content: '業務で利用する便利な機能が詰まったサイト。base64(エンコード/デコード), QRコード作成, json(エンコード/デコード)'
+    }, {
+      property: 'og:description',
+      content: '業務で利用する便利な機能が詰まったサイト。base64(エンコード/デコード), QRコード作成, json(エンコード/デコード)'
+    }, {
+      property: 'og:title',
+      content: 'せぃゆーの便利ツール'
+    }, {
+      property: 'og:type',
+      content: 'website'
+    }, {
+      property: 'og:url',
+      content: 'https://tools.seiyu-nico.jp'
+    }, {
+      property: 'og:image',
+      content: ''
+    }, {
+      property: 'og:site_name',
+      content: 'せぃゆーTools'
+    }]
   }
 });
 
@@ -169,7 +191,29 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       inner: "便利ツール",
       separator: '|',
       complement: 'JSON エンコード/デコード'
-    }
+    },
+    meta: [{
+      name: 'description',
+      content: 'Jsonエンコード/デコードをブラウザ上で行うことができます。'
+    }, {
+      property: 'og:description',
+      content: 'Jsonエンコード/デコードをブラウザ上で行うことができます。'
+    }, {
+      property: 'og:title',
+      content: 'せぃゆーの便利ツール(Jsonエンコード/デコード)'
+    }, {
+      property: 'og:type',
+      content: 'article'
+    }, {
+      property: 'og:url',
+      content: 'https://tools.seiyu-nico.jp/json/'
+    }, {
+      property: 'og:image',
+      content: ''
+    }, {
+      property: 'og:site_name',
+      content: 'せぃゆーTools'
+    }]
   }
 });
 

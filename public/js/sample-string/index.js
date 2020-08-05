@@ -86,7 +86,29 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       inner: "便利ツール",
       separator: '|',
       complement: 'サンプル文字列'
-    }
+    },
+    meta: [{
+      name: 'description',
+      content: 'N文字の適応なテキストを簡単にブラウザ上で作成することが可能です。'
+    }, {
+      property: 'og:description',
+      content: 'N文字の適応なテキストを簡単にブラウザ上で作成することが可能です。'
+    }, {
+      property: 'og:title',
+      content: 'せぃゆーの便利ツール(サンプル文字列作成)'
+    }, {
+      property: 'og:type',
+      content: 'article'
+    }, {
+      property: 'og:url',
+      content: 'https://tools.seiyu-nico.jp/sample-string/'
+    }, {
+      property: 'og:image',
+      content: ''
+    }, {
+      property: 'og:site_name',
+      content: 'せぃゆーTools'
+    }]
   }
 });
 

@@ -69,6 +69,15 @@ export default {
       separator: '|',
       complement: 'Urlエンコード/デコード'
     },
+    meta: [
+      { name: 'description', content: 'URLエンコード/デコードをブラウザ上で行うことができます。' },
+      { property: 'og:description', content: 'URLエンコード/デコードをブラウザ上で行うことができます。' },
+      { property: 'og:title', content: 'せぃゆーの便利ツール(URLエンコード/デコード)' },
+      { property: 'og:type', content: 'article' },
+      { property: 'og:url', content: 'https://tools.seiyu-nico.jp/url/' },
+      { property: 'og:image', content: '' },
+      { property: 'og:site_name', content: 'せぃゆーTools' },
+    ]
   }
 }
 </script>

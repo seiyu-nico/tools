@@ -69,6 +69,15 @@ export default {
       separator: '|',
       complement: 'Base64エンコード/デコード'
     },
+    meta: [
+      { name: 'description', content: 'Base64エンコード/デコードをブラウザ上で行うことができます。' },
+      { property: 'og:description', content: 'Base64エンコード/デコードをブラウザ上で行うことができます。' },
+      { property: 'og:title', content: 'せぃゆーの便利ツール(Base64エンコード/デコード)' },
+      { property: 'og:type', content: 'article' },
+      { property: 'og:url', content: 'https://tools.seiyu-nico.jp/base64/' },
+      { property: 'og:image', content: '' },
+      { property: 'og:site_name', content: 'せぃゆーTools' },
+    ]
   }
 }
 </script>

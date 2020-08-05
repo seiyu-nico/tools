@@ -56,7 +56,7 @@
              <div class="sidebar-submenu">
               <ul>
                 <li>
-                  <router-link :to="{name: 'UrlEncode.Index'}">
+                  <router-link :to="{name: 'Url.Index'}">
                     <span @click="closeSideber()">
                       <i class="fa fa-book "></i>
                       <span>エンコード / デコード</span>

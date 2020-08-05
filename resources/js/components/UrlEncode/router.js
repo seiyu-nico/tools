@@ -3,16 +3,16 @@ import Router from './Router';
 import store from '../../store';
 
 export default {
-  path: '/url-encode',
+  path: '/url',
   component: Router,
   children: [
     {
       path: '',
-      name: 'UrlEncode.Index',
+      name: 'Url.Index',
       component: resolve => {
         require.ensure(['./Index.vue'], () => {
         resolve(require('./Index.vue'));
-        }, 'url-encode/index');
+        }, 'url/index');
       },
     }
   ]
