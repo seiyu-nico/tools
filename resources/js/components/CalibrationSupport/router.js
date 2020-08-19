@@ -1,16 +1,16 @@
 import Router from './Router';
 
 export default {
-  path: '/',
+  path: '/calibration-support',
   component: Router,
   children: [
     {
       path: '',
-      name: 'Index.Index',
+      name: 'CalibrationSupport.Index',
       component: resolve => {
         require.ensure(['./Index.vue'], () => {
         resolve(require('./Index.vue'));
-        }, 'index/index');
+        }, 'calibration-support/index');
       },
     }
   ]

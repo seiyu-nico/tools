@@ -176,6 +176,9 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         SimpleSoftwareIO\QrCode\ServiceProvider::class,
+
+        App\Providers\CalibrationServiceProvider::class,
+
     ],
 
     /*

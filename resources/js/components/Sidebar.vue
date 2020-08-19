@@ -92,6 +92,12 @@
               <span>QRコード</span>
             </router-link>
           </li>
+          <li> 
+            <router-link :to="{name: 'CalibrationSupport.Index'}">
+              <i class="fa fa-book "></i>
+              <span>文章校正支援</span>
+            </router-link>
+          </li>
 
           <!-- <li class="header-menu">
             <span>General</span>

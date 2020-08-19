@@ -8,6 +8,7 @@ import StrCountRouter from './components/StrCount/router';
 import UrlEncodeRouter from './components/UrlEncode/router';
 import JsonRouter from './components/Json/router';
 import QrRouter from './components/Qr/router';
+import CalibrationSupport from './components/CalibrationSupport/router';
 
 
 // VueRouterプラグインを使用する
@@ -23,6 +24,7 @@ const routes = [
   { ...UrlEncodeRouter, },
   { ...JsonRouter, },
   { ...QrRouter, },
+  { ...CalibrationSupport },
 ]
 
 // VueRouterインスタンスを作成する

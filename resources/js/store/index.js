@@ -6,7 +6,7 @@ import urlencode from './urlencode';
 import samplestring from './SampleString';
 import json from './json';
 import qr from './qr';
-
+import calibration_support from './CalibrationSupport';
 
 Vue.use(Vuex);
 
@@ -17,6 +17,7 @@ const store = new Vuex.Store({
     samplestring,
     json,
     qr,
+    calibration_support,
   }
 })
 
