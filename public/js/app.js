@@ -57371,16 +57371,15 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 var state = {
   sentence: '',
-  calibration: [{}]
+  calibrations: [{}]
 };
 var getters = {};
 var mutations = {
   updateValue: function updateValue(state, data) {
     state[data.key] = data.value;
   },
-  setCalibrate: function setCalibrate(state, calibration) {
-    console.log(calibration);
-    state.calibration = calibration;
+  setCalibrate: function setCalibrate(state, calibrations) {
+    state.calibrations = calibrations;
   }
 };
 var actions = {
@@ -57428,7 +57427,7 @@ var actions = {
               return _context2.abrupt("return", false);
 
             case 6:
-              context.commit('setCalibrate', response.data.calibration);
+              context.commit('setCalibrate', response.data.calibrations);
 
             case 7:
             case "end":

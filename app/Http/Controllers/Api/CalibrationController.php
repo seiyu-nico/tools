@@ -13,9 +13,9 @@ class CalibrationController extends Controller
     public function calibration(Request $request, CS $CS)
     {
         $post = $request->all();
-        $calibration = $CS->callApi($post['sentence']);
+        $calibrations = $CS->callApi($post['sentence']);
         $res = [
-            'calibration' => $calibration['Result'],
+            'calibrations' => $calibrations,
         ];
         return response($res, 200);
     }

@@ -1,5 +1,5 @@
 {
-    "/js/app.js": "/js/app.js?id=1c29eaf02acea82c76c6",
+    "/js/app.js": "/js/app.js?id=e341a22eb9c0738423da",
     "/css/app.css": "/css/app.css?id=602f4ee5bf23157bb0ae",
     "/js/base64/index.js": "/js/base64/index.js?id=630c2be93c9957a87a55",
     "/js/json/index.js": "/js/json/index.js?id=416abe6473a19dcc817f",
@@ -8,7 +8,7 @@
     "/js/str-count/index.js": "/js/str-count/index.js?id=d721e8d30c124e9b685b",
     "/js/url/index.js": "/js/url/index.js?id=e708460a9fe4c3e52c6a",
     "/js/index/index.js": "/js/index/index.js?id=dc48b6a04b89b2ed78e3",
-    "/js/calibration-support/index.js": "/js/calibration-support/index.js?id=92b2c78fa345c607f200",
+    "/js/calibration-support/index.js": "/js/calibration-support/index.js?id=dbed2a090b891b8edd94",
     "/js/vendors~base64/index~calibration-support/index~json/index~qr/index~sample-string/index~url/index.js": "/js/vendors~base64/index~calibration-support/index~json/index~qr/index~sample-string/index~url/index.js?id=155478ad1932c5d9209f",
     "/js/vendors~base64/index~calibration-support/index~json/index~qr/index~url/index.js": "/js/vendors~base64/index~calibration-support/index~json/index~qr/index~url/index.js?id=932d3fdb8edb3be58a21"
 }

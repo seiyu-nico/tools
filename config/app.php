@@ -178,6 +178,7 @@ return [
         SimpleSoftwareIO\QrCode\ServiceProvider::class,
 
         App\Providers\CalibrationServiceProvider::class,
+        App\Providers\ArrayServiceProvider::class,
 
     ],
 

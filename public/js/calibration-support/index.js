@@ -34,6 +34,27 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   created: function created() {},
@@ -52,8 +73,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     sentence: function sentence(state) {
       return state.calibration_support.sentence;
     },
-    calibration: function calibration(state) {
-      return state.calibration_support.calibration;
+    calibrations: function calibrations(state) {
+      return state.calibration_support.calibrations;
     }
   }))
 });
@@ -99,7 +120,29 @@ var render = function() {
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "col-6" }, [
-        _vm._v("\n      ここに校正内容が出力される\n    ")
+        _c("div", { staticClass: "table-responsive" }, [
+          _c("table", { staticClass: "table table-hover" }, [
+            _vm._m(0),
+            _vm._v(" "),
+            _c(
+              "tbody",
+              _vm._l(_vm.calibrations, function(calibration, key) {
+                return _c("tr", { key: key }, [
+                  _c("td", [_vm._v(_vm._s(calibration.StartPos))]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(calibration.Length))]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(calibration.Surface))]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(calibration.ShitekiWord))]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(calibration.ShitekiInfo))])
+                ])
+              }),
+              0
+            )
+          ])
+        ])
       ])
     ]),
     _vm._v(" "),
@@ -118,7 +161,26 @@ var render = function() {
     )
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [
+      _c("tr", [
+        _c("th", [_vm._v("文字開始位置 ")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("文字の長さ")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("文字")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("指摘箇所")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("内容")])
+      ])
+    ])
+  }
+]
 render._withStripped = true
 
 

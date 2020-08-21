@@ -3,10 +3,10 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use App\Services\CalibrationService;
+use App\Services\ArrayService;
 
 
-class CalibrationServiceProvider extends ServiceProvider
+class ArrayServiceProvider extends ServiceProvider
 {
     /**
      * Register any application services.
@@ -16,7 +16,7 @@ class CalibrationServiceProvider extends ServiceProvider
     public function register()
     {
         //
-        $this->app->bind(CalibrationService::class, 'App\Services\CalibrationService');
+        $this->app->bind(ArrayService::class, 'App\Services\ArrayService');
     }
 
     /**

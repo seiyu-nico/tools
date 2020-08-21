@@ -2,7 +2,7 @@ import { INTERNAL_SERVER_ERROR } from '../util';
 
 const state = {
   sentence: '',
-  calibration: [{}],
+  calibrations: [{}],
 }
 
 const getters = {
@@ -12,9 +12,8 @@ const mutations = {
   updateValue(state, data) {
     state[data.key] = data.value;
   },
-  setCalibrate(state, calibration) {
-    console.log(calibration);
-    state.calibration = calibration;
+  setCalibrate(state, calibrations) {
+    state.calibrations = calibrations;
   },
 }
 
@@ -28,7 +27,7 @@ const actions = {
       alert('エラーが発生しました');
       return false;
     }
-    context.commit('setCalibrate', response.data.calibration);
+    context.commit('setCalibrate', response.data.calibrations);
   },
 }
 
