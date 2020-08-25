@@ -65,6 +65,12 @@ __webpack_require__.r(__webpack_exports__);
     }, {
       property: 'og:site_name',
       content: 'せぃゆーTools'
+    }, {
+      name: 'twitter:card',
+      content: 'summary'
+    }, {
+      name: 'twitter:site',
+      content: '@seiyu_nico'
     }]
   }
 });
@@ -213,6 +219,12 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     }, {
       property: 'og:site_name',
       content: 'せぃゆーTools'
+    }, {
+      name: 'twitter:card',
+      content: 'summary'
+    }, {
+      name: 'twitter:site',
+      content: '@seiyu_nico'
     }]
   }
 });
