@@ -226,6 +226,12 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     }, {
       property: 'og:site_name',
       content: 'せぃゆーTools'
+    }, {
+      name: 'twitter:card',
+      content: 'summary'
+    }, {
+      name: 'twitter:site',
+      content: '@seiyu_nico'
     }]
   }
 });

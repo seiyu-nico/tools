@@ -108,6 +108,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }, {
       property: 'og:site_name',
       content: 'せぃゆーTools'
+    }, {
+      name: 'twitter:card',
+      content: 'summary'
+    }, {
+      name: 'twitter:site',
+      content: '@seiyu_nico'
     }]
   }
 });

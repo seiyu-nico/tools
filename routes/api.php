@@ -28,3 +28,5 @@ Route::post('/json-decode', 'Api\JsonController@decode');
 
 Route::post('/qr', 'Api\QrController@create');
 
+Route::post('/calibration', 'Api\CalibrationController@calibration');
+

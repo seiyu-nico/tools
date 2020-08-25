@@ -71,6 +71,12 @@ __webpack_require__.r(__webpack_exports__);
     }, {
       property: 'og:site_name',
       content: 'せぃゆーTools'
+    }, {
+      name: 'twitter:card',
+      content: 'summary'
+    }, {
+      name: 'twitter:site',
+      content: '@seiyu_nico'
     }]
   }
 });
