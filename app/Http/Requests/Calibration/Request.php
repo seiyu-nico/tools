@@ -25,7 +25,7 @@ class Request extends FormRequest
     {
         return [
             // TODO: バリデーションから
-            'sentence' => 'required|max:500',
+            'sentence' => 'required|max:1000',
         ];
     }
     

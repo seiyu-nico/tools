@@ -57414,31 +57414,33 @@ var actions = {
         while (1) {
           switch (_context2.prev = _context2.next) {
             case 0:
-              _context2.next = 2;
+              // APIを投げる前にエラーを空にする
+              context.commit('setErrors', {});
+              _context2.next = 3;
               return axios.post('/api/calibration', {
                 'sentence': context.state.sentence
               });
 
-            case 2:
+            case 3:
               response = _context2.sent;
 
               if (!(_util__WEBPACK_IMPORTED_MODULE_1__["INTERNAL_SERVER_ERROR"] === response.status)) {
-                _context2.next = 8;
+                _context2.next = 9;
                 break;
               }
 
               alert('エラーが発生しました');
               return _context2.abrupt("return", false);
 
-            case 8:
+            case 9:
               if (_util__WEBPACK_IMPORTED_MODULE_1__["VALIDATE_ERROR"] === response.status) {
                 context.commit('setErrors', response.data.errors);
               }
 
-            case 9:
+            case 10:
               context.commit('setCalibrate', response.data.calibrations);
 
-            case 10:
+            case 11:
             case "end":
               return _context2.stop();
           }
