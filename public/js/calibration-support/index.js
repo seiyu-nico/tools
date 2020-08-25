@@ -55,6 +55,13 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   created: function created() {},
@@ -75,6 +82,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     },
     calibrations: function calibrations(state) {
       return state.calibration_support.calibrations;
+    },
+    errors: function errors(state) {
+      return state.calibration_support.errors;
     }
   }))
 });
@@ -99,24 +109,45 @@ var render = function() {
   return _c("div", [
     _c("h1", [_vm._v("文章校正")]),
     _vm._v(" "),
+    _c("p", [
+      _vm._v(
+        "※文章校正支援ツールは Yahoo! JAPANで無償公開されているAPIを使用しています"
+      )
+    ]),
+    _vm._v(" "),
     _c("div", { staticClass: "row" }, [
       _c("div", { staticClass: "col-6" }, [
-        _c("div", { staticClass: "form-group" }, [
-          _c("label", { attrs: { for: "sentence_textarea" } }, [
-            _vm._v("文章校正")
-          ]),
-          _vm._v(" "),
-          _c("textarea", {
-            staticClass: "form-control",
-            attrs: { id: "sentence_textarea", rows: "10" },
-            domProps: { value: _vm.sentence },
-            on: {
-              input: function($event) {
-                return _vm.updateSentence("sentence", $event)
+        _c(
+          "div",
+          { staticClass: "form-group" },
+          [
+            _c("label", { attrs: { for: "sentence_textarea" } }, [
+              _vm._v("文章校正")
+            ]),
+            _vm._v(" "),
+            _c("textarea", {
+              class: [_vm.errors.sentence ? "is-invalid" : "", "form-control"],
+              attrs: { id: "sentence_textarea", rows: "10" },
+              domProps: { value: _vm.sentence },
+              on: {
+                input: function($event) {
+                  return _vm.updateSentence("sentence", $event)
+                }
               }
-            }
-          })
-        ])
+            }),
+            _vm._v(" "),
+            _vm.errors.sentence
+              ? _vm._l(_vm.errors.sentence, function(error, index) {
+                  return _c(
+                    "div",
+                    { key: index, staticClass: "invalid-feedback" },
+                    [_vm._v(_vm._s(error))]
+                  )
+                })
+              : _vm._e()
+          ],
+          2
+        )
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "col-6" }, [

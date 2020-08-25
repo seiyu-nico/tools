@@ -57371,7 +57371,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 var state = {
   sentence: '',
-  calibrations: [{}]
+  calibrations: [{}],
+  errors: []
 };
 var getters = {};
 var mutations = {
@@ -57380,6 +57381,9 @@ var mutations = {
   },
   setCalibrate: function setCalibrate(state, calibrations) {
     state.calibrations = calibrations;
+  },
+  setErrors: function setErrors(state, errors) {
+    state.errors = errors;
   }
 };
 var actions = {
@@ -57419,17 +57423,22 @@ var actions = {
               response = _context2.sent;
 
               if (!(_util__WEBPACK_IMPORTED_MODULE_1__["INTERNAL_SERVER_ERROR"] === response.status)) {
-                _context2.next = 6;
+                _context2.next = 8;
                 break;
               }
 
               alert('エラーが発生しました');
               return _context2.abrupt("return", false);
 
-            case 6:
+            case 8:
+              if (_util__WEBPACK_IMPORTED_MODULE_1__["VALIDATE_ERROR"] === response.status) {
+                context.commit('setErrors', response.data.errors);
+              }
+
+            case 9:
               context.commit('setCalibrate', response.data.calibrations);
 
-            case 7:
+            case 10:
             case "end":
               return _context2.stop();
           }

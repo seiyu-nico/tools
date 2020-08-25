@@ -1,12 +1,19 @@
 <template>
   <div>
     <h1>文章校正</h1>
+    <p>※文章校正支援ツールは Yahoo! JAPANで無償公開されているAPIを使用しています</p>
     <div class="row">
       <div class="col-6">
         <div class="form-group">
           <label for="sentence_textarea">文章校正</label>
-          <textarea class="form-control" id="sentence_textarea" rows="10"
-           :value="sentence" @input="updateSentence('sentence', $event)"></textarea>
+          <textarea
+            :class="[errors.sentence ? 'is-invalid' : '', 'form-control']" 
+            id="sentence_textarea" rows="10"
+            :value="sentence" @input="updateSentence('sentence', $event)">
+          </textarea>
+          <template v-if="errors.sentence">
+            <div v-for="(error, index) in errors.sentence" :key=index class="invalid-feedback">{{error}}</div>
+          </template>  
         </div>
       </div>
       <div class="col-6">
@@ -53,8 +60,10 @@ export default {
   computed: {
     ...mapState({
       sentence: state => state.calibration_support.sentence,
-      calibrations: state => state.calibration_support.calibrations
+      calibrations: state => state.calibration_support.calibrations,
+      errors: state => state.calibration_support.errors
     })
+      
   },
 }
 </script>

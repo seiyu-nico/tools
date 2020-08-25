@@ -1,8 +1,9 @@
-import { INTERNAL_SERVER_ERROR } from '../util';
+import { VALIDATE_ERROR, INTERNAL_SERVER_ERROR } from '../util';
 
 const state = {
   sentence: '',
   calibrations: [{}],
+  errors: [],
 }
 
 const getters = {
@@ -15,6 +16,9 @@ const mutations = {
   setCalibrate(state, calibrations) {
     state.calibrations = calibrations;
   },
+  setErrors (state, errors) {
+    state.errors = errors;
+  }
 }
 
 const actions = {
@@ -26,6 +30,8 @@ const actions = {
     if (INTERNAL_SERVER_ERROR === response.status) {
       alert('エラーが発生しました');
       return false;
+    } else if (VALIDATE_ERROR === response.status) {
+      context.commit('setErrors', response.data.errors);
     }
     context.commit('setCalibrate', response.data.calibrations);
   },
